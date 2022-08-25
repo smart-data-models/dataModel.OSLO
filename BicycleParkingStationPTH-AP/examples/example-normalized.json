@@ -1,0 +1,34 @@
+{
+  "id": "https://blue-bike.be/stations/141",
+  "type": "BicycleParkingStation",
+  "ParkingFacility.^capacity": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "Capacity",
+      "Capacity.total": {
+        "type": "Number",
+        "value": 20
+      }
+    }
+  },
+  "InfrastructureElement.geometry": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "Geometry",
+      "Geometry.wkt": {
+        "type": "Property",
+        "value": "POINT(3.313743000000 50.855703000000)"
+      }
+    }
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        3.313743000000,
+        50.855703000000
+      ]
+    }
+  }
+}
