@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$schemaVersion": "0.0.2",
+  "$schemaVersion": "0.0.1",
   "modelTags": "GreenMov",
-  "$id": "https://github.com/smart-data-models/incubated/dataModel.OSLO/raw/master/BicycleParkingStation/schema.json",
+  "$id": "https://github.com/smart-data-models/incubated/dataModel.OSLO.PassengerTransportHubs/raw/master/BicycleParkingStationPTH-AP/schema.json",
   "title": "Bicycle Parking Station PTH-AP schema",
   "description": "Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification",
   "type": "object",
@@ -25,7 +25,7 @@
         },
         "ParkingFacility.^capacity": {
           "type": "object",
-          "description": "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'",
+          "description": "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'. ",
           "properties": {
             "type": {
               "type": "string",
@@ -35,7 +35,7 @@
             },
             "Capacity.total": {
               "type": "number",
-              "description": "Property. Model:'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."
+              "description": "Property. Model: 'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."
             }
           },
           "required": [
