@@ -1,0 +1,34 @@
+{
+  "id": "http://example.org/resourcereport/1",
+  "type": "ResourceReport",
+  "ResourceReport.actuator": {
+    "type": "ActuatorType",
+    "ActuatorType.preferredLabel": "human"
+  },
+  "ResourceReport.location": "https://blue-bike.be/stations/141",
+  "ResourceReport.meansOfTransport": {
+    "type": "MeansOfTransport",
+    "MeansOfTransport.preferredLabel": "bicycle"
+  },
+  "ResourceReport.number": 5,
+  "ResourceReport.service": "https://blue-bike.be/#me",
+  "ResourceReport.status": {
+    "type": "ResourceStatus",
+    "ResourceStatus.preferredLabel": "available"
+  },
+  "ResourceReport.type": {
+    "type": "ResourceType",
+    "ResourceType.preferredLabel": "vehicle"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      3.313743000000,
+      50.855703000000
+    ]
+  },
+  "@context": [
+    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+  ]
+}
