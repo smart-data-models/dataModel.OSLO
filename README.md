@@ -5,6 +5,8 @@
 The following entity types are available:
 - [BicycleParkingStation](https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStation/README.md). Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification
 
+- [ResourceReport](https://github.com/smart-data-models/dataModel.OSLO/blob/master/ResourceReport/README.md). Resource Report Schema meeting Passenger Transport Hubs AP Schema specification. A summary of resources connected to mobility services based on defined filters by the person requesting the report.
+
 
 
 ### Contributors
