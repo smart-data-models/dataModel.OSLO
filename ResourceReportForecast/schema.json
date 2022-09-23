@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$schemaVersion": "0.0.3",
+  "$schemaVersion": "0.0.2",
   "modelTags": "GreenMov",
   "$id": "https://github.com/smart-data-models/dataModel.OSLO/raw/master/ResourceReport/schema.json",
-  "title": "Resource Report PTH-AP schema",
-  "description": "Resource Report Schema meeting Passenger Transport Hubs AP Schema specification. A summary of resources connected to mobility services based on defined filters by the person requesting the report.",
+  "title": "Resource Report Forecast PTH-AP schema",
+  "description": "Resource Report Forecast Schema meeting Passenger Transport Hubs AP Schema specification. A summary of the expectations of the resources connected to mobility services based on defined filters by the person requesting the report.",
   "type": "object",
   "allOf": [
     {
@@ -18,9 +18,9 @@
         "type": {
           "type": "string",
           "enum": [
-            "ResourceReport"
+            "ResourceReportForecast"
           ],
-          "description": "Property. NGSI Entity type. It has to be ResourceReport."
+          "description": "Property. NGSI Entity type. It has to be ResourceReportForecast"
         },
         "ResourceReport.actuator": {
           "type": "object",
@@ -178,6 +178,20 @@
             "type",
             "ResourceType.preferredLabel"
           ]
+        },
+        "validity": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`."
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Validity period start date and time."
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Validity period end date and time."
         }
       }
     }

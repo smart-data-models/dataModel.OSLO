@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "GreenMov",
   "derivedFrom": "",
   "license": "",
@@ -24,7 +24,7 @@
           ],
           "description": "Property. NGSI Entity type. It has to be BicycleParkingStation"
         },
-        "ParkingFacility.^capacity": {
+        "ParkingFacility.capacity": {
           "type": "object",
           "description": "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'. ",
           "properties": {
@@ -66,6 +66,20 @@
             "type",
             "Geometry.wkt"
           ]
+        },
+        "validity": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`."
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Validity period start date and time."
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Validity period end date and time."
         }
       }
     }

@@ -1,0 +1,62 @@
+{
+  "id": "http://example.org/resourcereport/1",
+  "type": "ResourceReportForecast",
+  "ResourceReport.actuator": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "ActuatorType",
+      "ActuatorType.preferredLabel": "human"
+    }
+  },
+  "ResourceReport.location": {
+    "type": "URL",
+    "value": "https://blue-bike.be/stations/141"
+  },
+  "ResourceReport.meansOfTransport": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "MeansOfTransport",
+      "MeansOfTransport.preferredLabel": "bicycle"
+    }
+  },
+  "ResourceReport.number": {
+    "type": "Number",
+    "value": 5
+  },
+  "ResourceReport.service": {
+    "type": "URL",
+    "value": "https://blue-bike.be/#me"
+  },
+  "ResourceReport.status": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "ResourceStatus",
+      "ResourceStatus.preferredLabel": "available"
+    }
+  },
+  "ResourceReport.type": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "ResourceType",
+      "ResourceType.preferredLabel": "vehicle"
+    }
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        3.313743000000,
+        50.855703000000
+      ]
+    }
+  },
+  "validFrom": {
+    "type": "Date-Time",
+    "value": "2022-05-07T06:43:37Z"
+  },
+  "validTo": {
+    "type": "Date-Time",
+    "value": "2022-05-07T07:43:37Z"
+  }
+}
