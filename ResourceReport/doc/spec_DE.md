@@ -4,11 +4,11 @@
 [Offene Lizenz](https://github.com/smart-data-models//dataModel.OSLO/blob/master/ResourceReport/LICENSE.md)  
 [Dokument automatisch generiert](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 Globale Beschreibung: **Ressourcen-Berichtsschema gemäß der Spezifikation des AP-Schemas für Personenverkehrsknotenpunkte. Eine Zusammenfassung von Ressourcen, die mit Mobilitätsdiensten verbunden sind, basierend auf definierten Filtern durch die Person, die den Bericht anfordert.**  
-Version: 0.0.2  
+Version: 0.0.3  
 
 ## Liste der Eigenschaften  
 
-- `ResourceReport.actuator`: Motor des Transportmittels.  - `ResourceReport.location`: Standort der Ressource. Dies könnte eine Fahrradabstellstation oder der Echtzeit-Standort des Fahrzeugs sein, z. B. im Free-Floating-Teilverkehr.  - `ResourceReport.meansOfTransport`: Die Art des Transportmittels der Ressource.  - `ResourceReport.number`: Die Anzahl der Ressourcen.  - `ResourceReport.reportTime`: Zeitpunkt, für den der Bericht gültig ist.  - `ResourceReport.service`: Der im ResourceReport verwendete MobilityService.  - `ResourceReport.status`: Zustand einer Ressource. Z.B. reserviert, inaktiv, verfügbar. Bestimmt, ob eine Ressource verwendet werden kann.  - `ResourceReport.type`: Art der Ressource.  - `address`: Die Postanschrift  - `alternateName`: Ein alternativer Name für diesen Artikel  - `areaServed`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `location`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Empfohlen wird der voll qualifizierte Domänenname des Quellanbieters oder die URL des Quellobjekts.  - `type`: NGSI-Entitätstyp. Es muss ResourceReport sein.    
+- `ResourceReport.actuator`: Motor des Transportmittels.  - `ResourceReport.location`: Standort der Ressource. Dies könnte eine Fahrradabstellstation oder der Echtzeit-Standort des Fahrzeugs sein, z. B. im Free-Floating-Teilverkehr.  - `ResourceReport.meansOfTransport`: Die Art des Transportmittels der Ressource.  - `ResourceReport.number`: Die Anzahl der Ressourcen.  - `ResourceReport.reportTime`: Zeitpunkt, für den der Bericht gültig ist.  - `ResourceReport.service`: Der im ResourceReport verwendete MobilityService.  - `ResourceReport.status`: Zustand einer Ressource. Z.B. reserviert, inaktiv, verfügbar. Bestimmt, ob eine Ressource verwendet werden kann.  - `ResourceReport.type`: Art der Ressource.  - `address`: Die Postanschrift  - `alternateName`: Ein alternativer Name für diesen Artikel  - `areaServed`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `location`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Es wird empfohlen, den voll qualifizierten Domänennamen des Quellanbieters oder die URL des Quellobjekts zu verwenden.  - `type`: NGSI-Entitätstyp. Es muss ResourceReport sein.    
 Erforderliche Eigenschaften  
 - `ResourceReport.number`  - `id`  - `type`  ## Datenmodell Beschreibung der Eigenschaften  
 Alphabetisch sortiert (für Details anklicken)  
@@ -41,6 +41,12 @@ ResourceReport:
         type: Property    
     ResourceReport.location:    
       description: 'Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.'    
+      properties:    
+        object:    
+          format: uri    
+          type: string    
+        type:    
+          type: string    
       type: object    
       x-ngsi:    
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#location"    
@@ -89,12 +95,19 @@ ResourceReport:
         type: Property    
     ResourceReport.reportTime:    
       description: 'Point in time for which the report is valid.'    
-      type: date-time    
+      format: date-time    
+      type: string    
       x-ngsi:    
         model: http://purl.org/dc/elements/1.1/date    
         type: Property    
     ResourceReport.service:    
       description: 'The MobilityService used within the ResourceReport.'    
+      properties:    
+        object:    
+          format: uri    
+          type: string    
+        type:    
+          type: string    
       type: object    
       x-ngsi:    
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#service"    
@@ -418,7 +431,7 @@ ResourceReport:
   x-license-url: https://github.com/smart-data-models/dataModel.OSLO/blob/master/ResourceReport/LICENSE.md    
   x-model-schema: https://github.com/smart-data-models/dataModel.OSLO/raw/master/ResourceReport/schema.json    
   x-model-tags: GreenMov    
-  x-version: 0.0.2    
+  x-version: 0.0.3    
 ```  
 </details>    
 ## Beispiel-Nutzlasten  
