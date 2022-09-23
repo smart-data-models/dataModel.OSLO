@@ -4,7 +4,7 @@
 [オープンライセンス](https://github.com/smart-data-models//dataModel.OSLO/blob/master/ResourceReport/LICENSE.md)  
 [ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 グローバルな記述です。**リソースレポートスキーマ（Resource Report Schema meeting Passenger Transport Hubs AP Schema specification）。レポートを要求する人が定義したフィルターに基づく、モビリティサービスに接続されたリソースの概要。  
-バージョン: 0.0.2  
+バージョン: 0.0.3  
 
 ## プロパティ一覧  
 
@@ -41,6 +41,12 @@ ResourceReport:
         type: Property    
     ResourceReport.location:    
       description: 'Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.'    
+      properties:    
+        object:    
+          format: uri    
+          type: string    
+        type:    
+          type: string    
       type: object    
       x-ngsi:    
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#location"    
@@ -89,12 +95,19 @@ ResourceReport:
         type: Property    
     ResourceReport.reportTime:    
       description: 'Point in time for which the report is valid.'    
-      type: date-time    
+      format: date-time    
+      type: string    
       x-ngsi:    
         model: http://purl.org/dc/elements/1.1/date    
         type: Property    
     ResourceReport.service:    
       description: 'The MobilityService used within the ResourceReport.'    
+      properties:    
+        object:    
+          format: uri    
+          type: string    
+        type:    
+          type: string    
       type: object    
       x-ngsi:    
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#service"    
@@ -418,7 +431,7 @@ ResourceReport:
   x-license-url: https://github.com/smart-data-models/dataModel.OSLO/blob/master/ResourceReport/LICENSE.md    
   x-model-schema: https://github.com/smart-data-models/dataModel.OSLO/raw/master/ResourceReport/schema.json    
   x-model-tags: GreenMov    
-  x-version: 0.0.2    
+  x-version: 0.0.3    
 ```  
 </details>    
 ## ペイロードの例  
