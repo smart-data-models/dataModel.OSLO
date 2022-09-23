@@ -1,0 +1,287 @@
+{
+    "@id": "dtmi:com:ngsi-ld:ResourceReportForecast;0",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "comment": "Resource Report Forecast PTH-AP schema adapted to DTDL from smartdatamodels.org. Source: https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/ResourceReportForecast/schema.json",
+    "description": "Resource Report Forecast Schema meeting Passenger Transport Hubs AP Schema specification. A summary of the expectations of the resources connected to mobility services based on defined filters by the person requesting the report.",
+    "displayName": "ResourceReportForecast",
+    "contents": [
+        {
+            "name": "ResourceReport.number",
+            "writable": true,
+            "displayName": "ResourceReport.number",
+            "@type": "Property",
+            "schema": "integer",
+            "comment": "The number of resources."
+        },
+        {
+            "name": "ResourceReport.reportTime",
+            "writable": true,
+            "displayName": "ResourceReport.reportTime",
+            "@type": "Property",
+            "schema": "dateTime",
+            "comment": "Point in time for which the report is valid."
+        },
+        {
+            "name": "alternateName",
+            "writable": true,
+            "displayName": "alternateName",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "An alternative name for this item"
+        },
+        {
+            "name": "areaServed",
+            "writable": true,
+            "displayName": "areaServed",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "The geographic area where a service or offered item is provided"
+        },
+        {
+            "name": "dataProvider",
+            "writable": true,
+            "displayName": "dataProvider",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "A sequence of characters identifying the provider of the harmonised data entity."
+        },
+        {
+            "name": "dateCreated",
+            "writable": true,
+            "displayName": "dateCreated",
+            "@type": "Property",
+            "schema": "dateTime",
+            "comment": "Entity creation timestamp. This will usually be allocated by the storage platform."
+        },
+        {
+            "name": "dateModified",
+            "writable": true,
+            "displayName": "dateModified",
+            "@type": "Property",
+            "schema": "dateTime",
+            "comment": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform."
+        },
+        {
+            "name": "description",
+            "writable": true,
+            "displayName": "description",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "A description of this item"
+        },
+        {
+            "name": "name",
+            "writable": true,
+            "displayName": "name",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "The name of this item."
+        },
+        {
+            "name": "seeAlso",
+            "writable": true,
+            "displayName": "seeAlso"
+        },
+        {
+            "name": "source",
+            "writable": true,
+            "displayName": "source",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object."
+        },
+        {
+            "name": "validFrom",
+            "writable": true,
+            "displayName": "validFrom",
+            "@type": "Property",
+            "schema": "dateTime",
+            "comment": "Validity period start date and time."
+        },
+        {
+            "name": "validTo",
+            "writable": true,
+            "displayName": "validTo",
+            "@type": "Property",
+            "schema": "dateTime",
+            "comment": "Validity period end date and time."
+        },
+        {
+            "name": "validity",
+            "writable": true,
+            "displayName": "validity",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`."
+        },
+        {
+            "@type": "Telemetry",
+            "name": "owner",
+            "schema": {
+                "@type": "Array",
+                "elementSchema": "string"
+            },
+            "comment": "A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)",
+            "displayName": "owner"
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.actuator",
+            "comment": "Engine of the means of transport.",
+            "displayName": "ResourceReport.actuator",
+            "fields": [
+                {
+                    "name": "ActuatorType.preferredLabel",
+                    "schema": "enum"
+                },
+                {
+                    "name": "type",
+                    "schema": "enum"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.location",
+            "comment": "Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.",
+            "displayName": "ResourceReport.location",
+            "fields": [
+                {
+                    "name": "object",
+                    "schema": "string"
+                },
+                {
+                    "name": "type",
+                    "schema": "string"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.meansOfTransport",
+            "comment": "The type of means of transport of the Resource.",
+            "displayName": "ResourceReport.meansOfTransport",
+            "fields": [
+                {
+                    "name": "MeansOfTransport.preferredLabel",
+                    "schema": "enum"
+                },
+                {
+                    "name": "type",
+                    "schema": "enum"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.service",
+            "comment": "The MobilityService used within the ResourceReport.",
+            "displayName": "ResourceReport.service",
+            "fields": [
+                {
+                    "name": "object",
+                    "schema": "string"
+                },
+                {
+                    "name": "type",
+                    "schema": "string"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.status",
+            "comment": "State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used.",
+            "displayName": "ResourceReport.status",
+            "fields": [
+                {
+                    "name": "ResourceStatus.preferredLabel",
+                    "schema": "enum"
+                },
+                {
+                    "name": "type",
+                    "schema": "enum"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "ResourceReport.type",
+            "comment": "Nature of the Resource.",
+            "displayName": "ResourceReport.type",
+            "fields": [
+                {
+                    "name": "ResourceType.preferredLabel",
+                    "schema": "enum"
+                },
+                {
+                    "name": "type",
+                    "schema": "enum"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "address",
+            "comment": "The mailing address",
+            "displayName": "address",
+            "fields": [
+                {
+                    "name": "addressCountry",
+                    "schema": "string"
+                },
+                {
+                    "name": "addressLocality",
+                    "schema": "string"
+                },
+                {
+                    "name": "addressRegion",
+                    "schema": "string"
+                },
+                {
+                    "name": "postOfficeBoxNumber",
+                    "schema": "string"
+                },
+                {
+                    "name": "postalCode",
+                    "schema": "string"
+                },
+                {
+                    "name": "streetAddress",
+                    "schema": "string"
+                }
+            ]
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_Point",
+            "schema": "point"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_LineString",
+            "schema": "lineString"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_Polygon",
+            "schema": "polygon"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiPoint",
+            "schema": "multiPoint"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiLineString",
+            "schema": "multiLineString"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiPolygon",
+            "schema": "multiPolygon"
+        }
+    ]
+}
