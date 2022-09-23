@@ -1,12 +1,10 @@
 # ResourceReport
-Version: 0.0.2
+Version: 0.0.3
 
 ## Description 
 
 Resource Report Schema meeting Passenger Transport Hubs AP Schema specification. A summary of resources connected to mobility services based on defined filters by the person requesting the report.
 ### Specification
-
-Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.OSLO/ResourceReport/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.OSLO/blob/master/ResourceReport/doc/spec.md)
 
