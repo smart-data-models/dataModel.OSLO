@@ -531,100 +531,101 @@ ResourceReport:
 Voici un exemple de ResourceReport au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-LD en utilisant `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "ActuatorType",  
-    "ActuatorType.preferredLabel": "human"  
-  },  
-  "ResourceReport.location": "https://blue-bike.be/stations/141",  
-  "ResourceReport.meansOfTransport": {  
-    "type": "MeansOfTransport",  
-    "MeansOfTransport.preferredLabel": "bicycle"  
-  },  
-  "ResourceReport.number": 5,  
-  "ResourceReport.service": "https://blue-bike.be/#me",  
-  "ResourceReport.status": {  
-    "type": "ResourceStatus",  
-    "ResourceStatus.preferredLabel": "available"  
-  },  
-  "ResourceReport.type": {  
-    "type": "ResourceType",  
-    "ResourceType.preferredLabel": "vehicle"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "ActuatorType",  
+        "ActuatorType.preferredLabel": "human"  
+    },  
+    "ResourceReport.location": "https://blue-bike.be/stations/141",  
+    "ResourceReport.meansOfTransport": {  
+        "type": "MeansOfTransport",  
+        "MeansOfTransport.preferredLabel": "bicycle"  
+    },  
+    "ResourceReport.number": 5,  
+    "ResourceReport.service": "https://blue-bike.be/#me",  
+    "ResourceReport.status": {  
+        "type": "ResourceStatus",  
+        "ResourceStatus.preferredLabel": "available"  
+    },  
+    "ResourceReport.type": {  
+        "type": "ResourceType",  
+        "ResourceType.preferredLabel": "vehicle"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### Rapport sur les ressources NGSI-LD normalisé Exemple  
 Voici un exemple de ResourceReport au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ActuatorType",  
-        "ActuatorType.preferredLabel": "human"  
-    }  
-  },  
-  "ResourceReport.location": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/stations/141"  
-  },  
-  "ResourceReport.meansOfTransport": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "MeansOfTransport",  
-        "MeansOfTransport.preferredLabel": "bicycle"  
-    }  
-  },  
-  "ResourceReport.number": {  
-    "type": "Property",  
-    "value": 5  
-  },  
-  "ResourceReport.service": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/#me"  
-  },  
-  "ResourceReport.status": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ResourceStatus",  
-        "ResourceStatus.preferredLabel": "available"  
-    }  
-  },  
-  "ResourceReport.type": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ResourceType",  
-        "ResourceType.preferredLabel": "vehicle"  
-    }  
-  },  
-  "location": {  
-    "type": "Geoproperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        3.313743000000,  
-        50.855703000000  
-      ]  
-    }  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-	"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ActuatorType",  
+            "ActuatorType.preferredLabel": "human"  
+        }  
+    },  
+    "ResourceReport.location": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/stations/141"  
+    },  
+    "ResourceReport.meansOfTransport": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "MeansOfTransport",  
+            "MeansOfTransport.preferredLabel": "bicycle"  
+        }  
+    },  
+    "ResourceReport.number": {  
+        "type": "Property",  
+        "value": 5  
+    },  
+    "ResourceReport.service": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/#me"  
+    },  
+    "ResourceReport.status": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceStatus",  
+            "ResourceStatus.preferredLabel": "available"  
+        }  
+    },  
+    "ResourceReport.type": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceType",  
+            "ResourceType.preferredLabel": "vehicle"  
+        }  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                3.313743,  
+                50.855703  
+            ]  
+        }  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
 Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
