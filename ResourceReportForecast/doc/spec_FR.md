@@ -8,7 +8,7 @@
 
 ## Liste des propriétés  
 
-- `ResourceReport.actuator`: Moteur du moyen de transport.  - `ResourceReport.location`: Emplacement de la ressource. Il peut s'agir d'une station de stationnement pour vélos ou de l'emplacement en temps réel du véhicule, par exemple dans le cas du transport de pièces en free-floating.  - `ResourceReport.meansOfTransport`: Le type de moyen de transport de la ressource.  - `ResourceReport.number`: Le nombre de ressources.  - `ResourceReport.reportTime`: Point dans le temps pour lequel le rapport est valide.  - `ResourceReport.service`: Le MobilityService utilisé dans le ResourceReport.  - `ResourceReport.status`: État d'une ressource. Par exemple, réservé, inactif, disponible. Détermine si une ressource peut être utilisée.  - `ResourceReport.type`: Nature de la ressource.  - `address`: L'adresse postale  - `alternateName`: Un nom alternatif pour cet élément  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `location`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'élément  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit être ResourceReportForecast.  - `validFrom`: Date et heure de début de la période de validité.  - `validTo`: Date et heure de fin de la période de validité.  - `validity`: Comprend la période de validité de cette prévision sous forme d'intervalle de temps ISO8601. Il peut également être utilisé deux attributs distincts : `validFrom`, `validTo`.    
+- `ResourceReport.actuator`: Moteur du moyen de transport.  - `ResourceReport.location`: Emplacement de la ressource. Il peut s'agir d'une station de stationnement pour vélos ou de l'emplacement en temps réel du véhicule, par exemple dans le cas du transport de pièces en free-floating.  - `ResourceReport.meansOfTransport`: Le type de moyen de transport de la ressource.  - `ResourceReport.number`: Le nombre de ressources.  - `ResourceReport.reportTime`: Point dans le temps pour lequel le rapport est valide.  - `ResourceReport.service`: Le MobilityService utilisé dans le ResourceReport.  - `ResourceReport.status`: État d'une ressource. Par exemple, réservé, inactif, disponible. Détermine si une ressource peut être utilisée.  - `ResourceReport.type`: Nature de la ressource.  - `address`: L'adresse postale  - `alternateName`: Un nom alternatif pour cet élément  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `location`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'article  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit être ResourceReportForecast.  - `validFrom`: Date et heure de début de la période de validité.  - `validTo`: Date et heure de fin de la période de validité.  - `validity`: Comprend la période de validité de cette prévision sous forme d'intervalle de temps ISO8601. Il peut également être utilisé deux attributs distincts : `validFrom`, `validTo`.    
 Propriétés requises  
 - `ResourceReport.number`  - `id`  - `type`  ## Description des propriétés du modèle de données  
 Classés par ordre alphabétique (cliquez pour plus de détails)  
@@ -561,116 +561,117 @@ ResourceReportForecast:
 Voici un exemple de ResourceReportForecast au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-LD quand on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReportForecast",  
-  "ResourceReport.actuator": {  
-    "type": "ActuatorType",  
-    "ActuatorType.preferredLabel": "human"  
-  },  
-  "ResourceReport.location": "https://blue-bike.be/stations/141",  
-  "ResourceReport.meansOfTransport": {  
-    "type": "MeansOfTransport",  
-    "MeansOfTransport.preferredLabel": "bicycle"  
-  },  
-  "ResourceReport.number": 5,  
-  "ResourceReport.service": "https://blue-bike.be/#me",  
-  "ResourceReport.status": {  
-    "type": "ResourceStatus",  
-    "ResourceStatus.preferredLabel": "available"  
-  },  
-  "ResourceReport.type": {  
-    "type": "ResourceType",  
-    "ResourceType.preferredLabel": "vehicle"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReportForecast",  
+    "ResourceReport.actuator": {  
+        "type": "ActuatorType",  
+        "ActuatorType.preferredLabel": "human"  
+    },  
+    "ResourceReport.location": "https://blue-bike.be/stations/141",  
+    "ResourceReport.meansOfTransport": {  
+        "type": "MeansOfTransport",  
+        "MeansOfTransport.preferredLabel": "bicycle"  
+    },  
+    "ResourceReport.number": 5,  
+    "ResourceReport.service": "https://blue-bike.be/#me",  
+    "ResourceReport.status": {  
+        "type": "ResourceStatus",  
+        "ResourceStatus.preferredLabel": "available"  
+    },  
+    "ResourceReport.type": {  
+        "type": "ResourceType",  
+        "ResourceType.preferredLabel": "vehicle"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "validFrom": "2022-05-07T06:43:37Z",  
+    "validTo": "2022-05-07T07:43:37Z",  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "validFrom": "2022-05-07T06:43:37Z",  
-  "validTo": "2022-05-07T07:43:37Z",  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### ResourceReportForecast NGSI-LD normalisé Exemple  
 Voici un exemple de ResourceReportForecast au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ActuatorType",  
-      "ActuatorType.preferredLabel": "human"  
-    }  
-  },  
-  "ResourceReport.location": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/stations/141"  
-  },  
-  "ResourceReport.meansOfTransport": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "MeansOfTransport",  
-      "MeansOfTransport.preferredLabel": "bicycle"  
-    }  
-  },  
-  "ResourceReport.number": {  
-    "type": "Property",  
-    "value": 5  
-  },  
-  "ResourceReport.service": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/#me"  
-  },  
-  "ResourceReport.status": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ResourceStatus",  
-      "ResourceStatus.preferredLabel": "available"  
-    }  
-  },  
-  "ResourceReport.type": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ResourceType",  
-      "ResourceType.preferredLabel": "vehicle"  
-    }  
-  },  
-  "location": {  
-    "type": "Geoproperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        3.313743000000,  
-        50.855703000000  
-      ]  
-    }  
-  },  
-  "validFrom": {  
-    "type": "Property",  
-    "value": {  
-      "@type": "Date-Time",  
-      "@value": "2022-05-07T06:43:37Z"  
-    }  
-  },  
-  "validTo": {  
-    "type": "Property",  
-    "value": {  
-      "@type": "Date-Time",  
-      "@value": "2022-05-07T07:43:37Z"  
-    }  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ActuatorType",  
+            "ActuatorType.preferredLabel": "human"  
+        }  
+    },  
+    "ResourceReport.location": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/stations/141"  
+    },  
+    "ResourceReport.meansOfTransport": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "MeansOfTransport",  
+            "MeansOfTransport.preferredLabel": "bicycle"  
+        }  
+    },  
+    "ResourceReport.number": {  
+        "type": "Property",  
+        "value": 5  
+    },  
+    "ResourceReport.service": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/#me"  
+    },  
+    "ResourceReport.status": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceStatus",  
+            "ResourceStatus.preferredLabel": "available"  
+        }  
+    },  
+    "ResourceReport.type": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceType",  
+            "ResourceType.preferredLabel": "vehicle"  
+        }  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                3.313743,  
+                50.855703  
+            ]  
+        }  
+    },  
+    "validFrom": {  
+        "type": "Property",  
+        "value": {  
+            "@type": "Date-Time",  
+            "@value": "2022-05-07T06:43:37Z"  
+        }  
+    },  
+    "validTo": {  
+        "type": "Property",  
+        "value": {  
+            "@type": "Date-Time",  
+            "@value": "2022-05-07T07:43:37Z"  
+        }  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
 Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
