@@ -531,100 +531,101 @@ ResourceReport:
 ここでは、ResourceReportをJSON-LD形式でkey-valuesにした例を示します。これは、`options=keyValues`を使用した場合にNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "ActuatorType",  
-    "ActuatorType.preferredLabel": "human"  
-  },  
-  "ResourceReport.location": "https://blue-bike.be/stations/141",  
-  "ResourceReport.meansOfTransport": {  
-    "type": "MeansOfTransport",  
-    "MeansOfTransport.preferredLabel": "bicycle"  
-  },  
-  "ResourceReport.number": 5,  
-  "ResourceReport.service": "https://blue-bike.be/#me",  
-  "ResourceReport.status": {  
-    "type": "ResourceStatus",  
-    "ResourceStatus.preferredLabel": "available"  
-  },  
-  "ResourceReport.type": {  
-    "type": "ResourceType",  
-    "ResourceType.preferredLabel": "vehicle"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "ActuatorType",  
+        "ActuatorType.preferredLabel": "human"  
+    },  
+    "ResourceReport.location": "https://blue-bike.be/stations/141",  
+    "ResourceReport.meansOfTransport": {  
+        "type": "MeansOfTransport",  
+        "MeansOfTransport.preferredLabel": "bicycle"  
+    },  
+    "ResourceReport.number": 5,  
+    "ResourceReport.service": "https://blue-bike.be/#me",  
+    "ResourceReport.status": {  
+        "type": "ResourceStatus",  
+        "ResourceStatus.preferredLabel": "available"  
+    },  
+    "ResourceReport.type": {  
+        "type": "ResourceType",  
+        "ResourceType.preferredLabel": "vehicle"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### ResourceReport NGSI-LD 正規化例  
 以下は、ResourceReport を JSON-LD 形式で正規化した例である。これはオプションを使用しない場合、NGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ActuatorType",  
-        "ActuatorType.preferredLabel": "human"  
-    }  
-  },  
-  "ResourceReport.location": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/stations/141"  
-  },  
-  "ResourceReport.meansOfTransport": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "MeansOfTransport",  
-        "MeansOfTransport.preferredLabel": "bicycle"  
-    }  
-  },  
-  "ResourceReport.number": {  
-    "type": "Property",  
-    "value": 5  
-  },  
-  "ResourceReport.service": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/#me"  
-  },  
-  "ResourceReport.status": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ResourceStatus",  
-        "ResourceStatus.preferredLabel": "available"  
-    }  
-  },  
-  "ResourceReport.type": {  
-    "type": "Relationship",  
-    "object": {  
-        "type": "ResourceType",  
-        "ResourceType.preferredLabel": "vehicle"  
-    }  
-  },  
-  "location": {  
-    "type": "Geoproperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        3.313743000000,  
-        50.855703000000  
-      ]  
-    }  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-	"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ActuatorType",  
+            "ActuatorType.preferredLabel": "human"  
+        }  
+    },  
+    "ResourceReport.location": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/stations/141"  
+    },  
+    "ResourceReport.meansOfTransport": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "MeansOfTransport",  
+            "MeansOfTransport.preferredLabel": "bicycle"  
+        }  
+    },  
+    "ResourceReport.number": {  
+        "type": "Property",  
+        "value": 5  
+    },  
+    "ResourceReport.service": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/#me"  
+    },  
+    "ResourceReport.status": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceStatus",  
+            "ResourceStatus.preferredLabel": "available"  
+        }  
+    },  
+    "ResourceReport.type": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceType",  
+            "ResourceType.preferredLabel": "vehicle"  
+        }  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                3.313743,  
+                50.855703  
+            ]  
+        }  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
 マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
