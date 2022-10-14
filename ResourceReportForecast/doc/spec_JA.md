@@ -8,7 +8,7 @@
 
 ## プロパティ一覧  
 
-- `ResourceReport.actuator`: 移動手段のエンジン。  - `ResourceReport.location`: リソースの位置。これは、駐輪場や、フリーフローティング部品輸送などにおける車両のリアルタイムの位置である可能性がある。  - `ResourceReport.meansOfTransport`: リソースの輸送手段の種類。  - `ResourceReport.number`: リソースの数です。  - `ResourceReport.reportTime`: レポートが有効である時点。  - `ResourceReport.service`: ResourceReport内で使用されるMobilityService。  - `ResourceReport.status`: リソースの状態。例：予約済み、非アクティブ、利用可能。リソースが使用可能かどうかを判断する。  - `ResourceReport.type`: リソースの性質  - `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリストです。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI エンティティタイプ。ResourceReportForecastでなければならない。  - `validFrom`: 有効期間開始日時。  - `validTo`: 有効期間終了日時。  - `validity`: この予測の有効期間をISO8601時間間隔として含む。また、2つの別々の属性を使用することもできます。validFrom`, `validTo`。    
+- `ResourceReport.actuator`: 移動手段のエンジン。  - `ResourceReport.location`: リソースの位置。これは駐輪場であったり、フリーフローティング部品輸送などでの車両のリアルタイムの位置であったりする。  - `ResourceReport.meansOfTransport`: リソースの輸送手段の種類。  - `ResourceReport.number`: リソースの数です。  - `ResourceReport.reportTime`: レポートが有効である時点。  - `ResourceReport.service`: ResourceReport内で使用されるMobilityService。  - `ResourceReport.status`: リソースの状態。例：予約済み、非アクティブ、利用可能。リソースが使用可能かどうかを判断する。  - `ResourceReport.type`: リソースの性質  - `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリスト  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI エンティティタイプ。ResourceReportForecastでなければならない。  - `validFrom`: 有効期間開始日時。  - `validTo`: 有効期間終了日時。  - `validity`: この予測の有効期間をISO8601時間間隔として含む。また、2つの別々の属性を使用することもできます。validFrom`, `validTo`。    
 必要なプロパティ  
 - `ResourceReport.number`  - `id`  - `type`  ## プロパティのデータモデル記述  
 アルファベット順に並びます（クリックで詳細へ）  
@@ -561,116 +561,117 @@ ResourceReportForecast:
 以下は、ResourceReportForecastをJSON-LD形式でkey-valuesにした例です。これは、`options=keyValues`を使った場合にNGSI-LDと互換性があり、個々のエンティティのコンテキストデータが返される。  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReportForecast",  
-  "ResourceReport.actuator": {  
-    "type": "ActuatorType",  
-    "ActuatorType.preferredLabel": "human"  
-  },  
-  "ResourceReport.location": "https://blue-bike.be/stations/141",  
-  "ResourceReport.meansOfTransport": {  
-    "type": "MeansOfTransport",  
-    "MeansOfTransport.preferredLabel": "bicycle"  
-  },  
-  "ResourceReport.number": 5,  
-  "ResourceReport.service": "https://blue-bike.be/#me",  
-  "ResourceReport.status": {  
-    "type": "ResourceStatus",  
-    "ResourceStatus.preferredLabel": "available"  
-  },  
-  "ResourceReport.type": {  
-    "type": "ResourceType",  
-    "ResourceType.preferredLabel": "vehicle"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReportForecast",  
+    "ResourceReport.actuator": {  
+        "type": "ActuatorType",  
+        "ActuatorType.preferredLabel": "human"  
+    },  
+    "ResourceReport.location": "https://blue-bike.be/stations/141",  
+    "ResourceReport.meansOfTransport": {  
+        "type": "MeansOfTransport",  
+        "MeansOfTransport.preferredLabel": "bicycle"  
+    },  
+    "ResourceReport.number": 5,  
+    "ResourceReport.service": "https://blue-bike.be/#me",  
+    "ResourceReport.status": {  
+        "type": "ResourceStatus",  
+        "ResourceStatus.preferredLabel": "available"  
+    },  
+    "ResourceReport.type": {  
+        "type": "ResourceType",  
+        "ResourceType.preferredLabel": "vehicle"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "validFrom": "2022-05-07T06:43:37Z",  
+    "validTo": "2022-05-07T07:43:37Z",  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "validFrom": "2022-05-07T06:43:37Z",  
-  "validTo": "2022-05-07T07:43:37Z",  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### 資源レポート予測 NGSI-LD 正規化例  
 以下は、ResourceReportForecastをJSON-LD形式で正規化した例である。これはオプションを使用しない場合、NGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
-  "id": "http://example.org/resourcereport/1",  
-  "type": "ResourceReport",  
-  "ResourceReport.actuator": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ActuatorType",  
-      "ActuatorType.preferredLabel": "human"  
-    }  
-  },  
-  "ResourceReport.location": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/stations/141"  
-  },  
-  "ResourceReport.meansOfTransport": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "MeansOfTransport",  
-      "MeansOfTransport.preferredLabel": "bicycle"  
-    }  
-  },  
-  "ResourceReport.number": {  
-    "type": "Property",  
-    "value": 5  
-  },  
-  "ResourceReport.service": {  
-    "type": "Relationship",  
-    "object": "https://blue-bike.be/#me"  
-  },  
-  "ResourceReport.status": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ResourceStatus",  
-      "ResourceStatus.preferredLabel": "available"  
-    }  
-  },  
-  "ResourceReport.type": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "ResourceType",  
-      "ResourceType.preferredLabel": "vehicle"  
-    }  
-  },  
-  "location": {  
-    "type": "Geoproperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        3.313743000000,  
-        50.855703000000  
-      ]  
-    }  
-  },  
-  "validFrom": {  
-    "type": "Property",  
-    "value": {  
-      "@type": "Date-Time",  
-      "@value": "2022-05-07T06:43:37Z"  
-    }  
-  },  
-  "validTo": {  
-    "type": "Property",  
-    "value": {  
-      "@type": "Date-Time",  
-      "@value": "2022-05-07T07:43:37Z"  
-    }  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "http://example.org/resourcereport/1",  
+    "type": "ResourceReport",  
+    "ResourceReport.actuator": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ActuatorType",  
+            "ActuatorType.preferredLabel": "human"  
+        }  
+    },  
+    "ResourceReport.location": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/stations/141"  
+    },  
+    "ResourceReport.meansOfTransport": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "MeansOfTransport",  
+            "MeansOfTransport.preferredLabel": "bicycle"  
+        }  
+    },  
+    "ResourceReport.number": {  
+        "type": "Property",  
+        "value": 5  
+    },  
+    "ResourceReport.service": {  
+        "type": "Relationship",  
+        "object": "https://blue-bike.be/#me"  
+    },  
+    "ResourceReport.status": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceStatus",  
+            "ResourceStatus.preferredLabel": "available"  
+        }  
+    },  
+    "ResourceReport.type": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "ResourceType",  
+            "ResourceType.preferredLabel": "vehicle"  
+        }  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                3.313743,  
+                50.855703  
+            ]  
+        }  
+    },  
+    "validFrom": {  
+        "type": "Property",  
+        "value": {  
+            "@type": "Date-Time",  
+            "@value": "2022-05-07T06:43:37Z"  
+        }  
+    },  
+    "validTo": {  
+        "type": "Property",  
+        "value": {  
+            "@type": "Date-Time",  
+            "@value": "2022-05-07T07:43:37Z"  
+        }  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
 マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
