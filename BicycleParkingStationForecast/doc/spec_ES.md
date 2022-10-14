@@ -8,7 +8,7 @@
 
 ## Lista de propiedades  
 
-- `InfrastructureElement.geometry`: La geometría correspondiente al elemento de la infraestructura.  - `ParkingFacility.capacity`: Capacidad de una estructura cívica.  - `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Debe ser BicycleParkingStation  - `validFrom`: Fecha y hora de inicio del periodo de validez.  - `validTo`: Fecha y hora de finalización del periodo de validez.  - `validity`: Incluye el período de validez de esta previsión como un intervalo de tiempo ISO8601. También se pueden utilizar dos atributos distintos: `validFrom`, `validTo`.    
+- `InfrastructureElement.geometry`: La geometría correspondiente al elemento de la infraestructura.  - `ParkingFacility.capacity`: Capacidad de una estructura cívica.  - `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Debe ser BicycleParkingStation  - `validFrom`: Fecha y hora de inicio del periodo de validez.  - `validTo`: Fecha y hora de finalización del periodo de validez.  - `validity`: Incluye el periodo de validez de esta previsión como un intervalo de tiempo ISO8601. También se pueden utilizar dos atributos distintos: `validFrom`, `validTo`.    
 Propiedades requeridas  
 - `id`  - `type`  ## Descripción del modelo de datos de las propiedades  
 Ordenados alfabéticamente (haga clic para ver los detalles)  
@@ -412,66 +412,67 @@ BicycleParkingStationForecast:
 A continuación se muestra un ejemplo de BicycleParkingStationForecast en formato JSON-LD como key-values. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Capacity",  
-    "Capacity.total": 20  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Geometry",  
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.^capacity": {  
+        "type": "Capacity",  
+        "Capacity.total": 20  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Geometry",  
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### BicycleParkingStationForecast NGSI-LD normalizado Ejemplo  
 A continuación se muestra un ejemplo de BicycleParkingStationForecast en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Capacity",  
-      "Capacity.total": {  
-        "type": "Property",  
-        "value": 20  
-      }  
-    }  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Geometry",  
-      "Geometry.wkt": {  
-        "type": "Property",  
-        "value": "POINT(3.313743000000 50.855703000000)"  
-      }  
-    }  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.capacity": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Capacity",  
+            "Capacity.total": {  
+                "type": "Property",  
+                "value": 20  
+            }  
+        }  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Geometry",  
+            "Geometry.wkt": {  
+                "type": "Property",  
+                "value": "POINT(3.313743000000 50.855703000000)"  
+            }  
+        }  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
