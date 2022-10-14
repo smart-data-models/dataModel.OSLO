@@ -8,7 +8,7 @@
 
 ## Liste der Eigenschaften  
 
-- `InfrastructureElement.geometry`: Die Geometrie, die dem Infrastrukturelement entspricht.  - `ParkingFacility.^capacity`: Kapazität einer zivilen Struktur.  - `address`: Die Postanschrift  - `alternateName`: Ein alternativer Name für diesen Artikel  - `areaServed`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `location`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Empfohlen wird der voll qualifizierte Domänenname des Quellanbieters oder die URL des Quellobjekts.  - `type`: NGSI-Entitätstyp. Es muss BicycleParkingStation sein    
+- `InfrastructureElement.geometry`: Die Geometrie, die dem Infrastrukturelement entspricht.  - `ParkingFacility.^capacity`: Kapazität einer zivilen Struktur.  - `address`: Die Postanschrift  - `alternateName`: Ein alternativer Name für diesen Artikel  - `areaServed`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `location`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Es wird empfohlen, den voll qualifizierten Domänennamen des Quellanbieters oder die URL des Quellobjekts zu verwenden.  - `type`: NGSI-Entitätstyp. Es muss BicycleParkingStation sein    
 Erforderliche Eigenschaften  
 - `InfrastructureElement.geometry`  - `ParkingFacility.^capacity`  - `id`  - `location`  - `type`  ## Datenmodell Beschreibung der Eigenschaften  
 Alphabetisch sortiert (für Details anklicken)  
@@ -395,66 +395,67 @@ BicycleParkingStation:
 Hier ist ein Beispiel für eine BicycleParkingStation im JSON-LD-Format als Schlüsselwerte. Dies ist mit NGSI-LD kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Capacity",  
-    "Capacity.total": 20  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Geometry",  
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.^capacity": {  
+        "type": "Capacity",  
+        "Capacity.total": 20  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Geometry",  
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### FahrradParkstation NGSI-LD normalisiert Beispiel  
 Hier ist ein Beispiel für eine BicycleParkingStation im JSON-LD-Format in normalisierter Form. Dies ist mit NGSI-LD kompatibel, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Capacity",  
-      "Capacity.total": {  
-        "type": "Property",  
-        "value": 20  
-      }  
-    }  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Geometry",  
-      "Geometry.wkt": {  
-        "type": "Property",  
-        "value": "POINT(3.313743000000 50.855703000000)"  
-      }  
-    }  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.capacity": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Capacity",  
+            "Capacity.total": {  
+                "type": "Property",  
+                "value": 20  
+            }  
+        }  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Geometry",  
+            "Geometry.wkt": {  
+                "type": "Property",  
+                "value": "POINT(3.313743000000 50.855703000000)"  
+            }  
+        }  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 Siehe [FAQ 10] (https://smartdatamodels.org/index.php/faqs/), um eine Antwort auf die Frage zu erhalten, wie man mit Größeneinheiten umgeht  
