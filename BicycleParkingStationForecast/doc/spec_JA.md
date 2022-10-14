@@ -8,7 +8,7 @@
 
 ## プロパティ一覧  
 
-- `InfrastructureElement.geometry`: インフラストラクチャ要素に対応するジオメトリ。  - `ParkingFacility.capacity`: 市民団体としての能力  - `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリスト  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI Entity タイプ。BicycleParkingStationでなければならない。  - `validFrom`: 有効期間開始日時。  - `validTo`: 有効期間終了日時。  - `validity`: この予測の有効期間をISO8601時間間隔として含む。また、2つの別々の属性を使用することもできます。validFrom`, `validTo`。    
+- `InfrastructureElement.geometry`: インフラストラクチャ要素に対応するジオメトリ。  - `ParkingFacility.capacity`: 市民団体としての能力  - `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリストです。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI Entity タイプ。BicycleParkingStationでなければならない。  - `validFrom`: 有効期間開始日時。  - `validTo`: 有効期間終了日時。  - `validity`: この予測の有効期間をISO8601時間間隔として含む。また、2つの別々の属性を使用することもできます。validFrom`, `validTo`。    
 必要なプロパティ  
 - `id`  - `type`  ## プロパティのデータモデル記述  
 アルファベット順に並びます（クリックで詳細へ）  
@@ -412,66 +412,67 @@ BicycleParkingStationForecast:
 BicycleParkingStationForecastをJSON-LD形式でkey-valuesにした例です。これは、`options=keyValues`を使用した場合にNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Capacity",  
-    "Capacity.total": 20  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Geometry",  
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.^capacity": {  
+        "type": "Capacity",  
+        "Capacity.total": 20  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Geometry",  
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### BicycleParkingStationForecast NGSI-LD正規化例  
 BicycleParkingStationForecastをJSON-LD形式で正規化した例です。これはオプションを使用しない場合、NGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Capacity",  
-      "Capacity.total": {  
-        "type": "Property",  
-        "value": 20  
-      }  
-    }  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Geometry",  
-      "Geometry.wkt": {  
-        "type": "Property",  
-        "value": "POINT(3.313743000000 50.855703000000)"  
-      }  
-    }  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.capacity": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Capacity",  
+            "Capacity.total": {  
+                "type": "Property",  
+                "value": 20  
+            }  
+        }  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Geometry",  
+            "Geometry.wkt": {  
+                "type": "Property",  
+                "value": "POINT(3.313743000000 50.855703000000)"  
+            }  
+        }  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
