@@ -395,66 +395,67 @@ BicycleParkingStation:
 Voici un exemple de BicycleParkingStation au format JSON-LD en tant que valeurs-clés. Ceci est compatible avec NGSI-LD lorsque vous utilisez `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Capacity",  
-    "Capacity.total": 20  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Geometry",  
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.^capacity": {  
+        "type": "Capacity",  
+        "Capacity.total": 20  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Geometry",  
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 #### Station de stationnement pour bicyclettes NGSI-LD normalisé Exemple  
 Voici un exemple de BicycleParkingStation au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Capacity",  
-      "Capacity.total": {  
-        "type": "Property",  
-        "value": 20  
-      }  
-    }  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Relationship",  
-    "object": {  
-      "type": "Geometry",  
-      "Geometry.wkt": {  
-        "type": "Property",  
-        "value": "POINT(3.313743000000 50.855703000000)"  
-      }  
-    }  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStation",  
+    "ParkingFacility.capacity": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Capacity",  
+            "Capacity.total": {  
+                "type": "Property",  
+                "value": 20  
+            }  
+        }  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Relationship",  
+        "object": {  
+            "type": "Geometry",  
+            "Geometry.wkt": {  
+                "type": "Property",  
+                "value": "POINT(3.313743000000 50.855703000000)"  
+            }  
+        }  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
     ]  
-  },  
-  "@context": [  
-    "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
 }  
 ```  
 Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
