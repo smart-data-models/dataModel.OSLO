@@ -1,17 +1,31 @@
+<!-- 10-Header -->  
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
 Entité : ResourceReportForecast  
-===============================  
+===============================<!-- /10-Header -->  
+<!-- 15-License -->  
 [Licence ouverte] (https://github.com/smart-data-models//dataModel.OSLO/blob/master/ResourceReportForecast/LICENSE.md)  
 [document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
 Description globale : **Rapport sur les prévisions de ressources répondant à la spécification AP Schema des centres de transport de passagers. Un résumé des prévisions des ressources connectées aux services de mobilité sur la base de filtres définis par la personne qui demande le rapport.**  
 version : 0.0.2  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
 
 ## Liste des propriétés  
 
-- `ResourceReport.actuator`: Moteur du moyen de transport.  - `ResourceReport.location`: Emplacement de la ressource. Il peut s'agir d'une station de stationnement pour vélos ou de l'emplacement en temps réel du véhicule, par exemple dans le cas du transport de pièces en free-floating.  - `ResourceReport.meansOfTransport`: Le type de moyen de transport de la ressource.  - `ResourceReport.number`: Le nombre de ressources.  - `ResourceReport.reportTime`: Point dans le temps pour lequel le rapport est valide.  - `ResourceReport.service`: Le MobilityService utilisé dans le ResourceReport.  - `ResourceReport.status`: État d'une ressource. Par exemple, réservé, inactif, disponible. Détermine si une ressource peut être utilisée.  - `ResourceReport.type`: Nature de la ressource.  - `address`: L'adresse postale  - `alternateName`: Un nom alternatif pour cet élément  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `location`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'article  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit être ResourceReportForecast.  - `validFrom`: Date et heure de début de la période de validité.  - `validTo`: Date et heure de fin de la période de validité.  - `validity`: Comprend la période de validité de cette prévision sous forme d'intervalle de temps ISO8601. Il peut également être utilisé deux attributs distincts : `validFrom`, `validTo`.    
+<sup><sub>[*] S'il n'y a pas de type dans un attribut, c'est parce qu'il pourrait avoir plusieurs types ou différents formats/modèles</sub></sup>.  
+- `ResourceReport.actuator[object]`: Moteur du moyen de transport.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#actuator](https://purl.eu/ns/mobility/passenger-transport-hubs#actuator)- `ResourceReport.location[object]`: Emplacement de la ressource. Il peut s'agir d'une station de stationnement pour vélos ou de l'emplacement en temps réel du véhicule, par exemple dans le cas du transport de pièces en free-floating.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#location](https://purl.eu/ns/mobility/passenger-transport-hubs#location)- `ResourceReport.meansOfTransport[object]`: Le type de moyen de transport de la ressource.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel](https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel)- `ResourceReport.number[integer]`: Le nombre de ressources.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#number](https://purl.eu/ns/mobility/passenger-transport-hubs#number)- `ResourceReport.reportTime[string]`: Point dans le temps pour lequel le rapport est valide.  . Model: [http://purl.org/dc/elements/1.1/date](http://purl.org/dc/elements/1.1/date)- `ResourceReport.service[object]`: Le MobilityService utilisé dans le ResourceReport.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#service](https://purl.eu/ns/mobility/passenger-transport-hubs#service)- `ResourceReport.status[object]`: État d'une ressource. Par exemple, réservé, inactif, disponible. Détermine si une ressource peut être utilisée.  . Model: [https://purl.eu/ns/mobility/passenger-transport-hubs#status](https://purl.eu/ns/mobility/passenger-transport-hubs#status)- `ResourceReport.type[object]`: Nature de la ressource.  . Model: [http://purl.org/dc/terms/type](http://purl.org/dc/terms/type)- `address[object]`: L'adresse postale  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nom alternatif pour cet élément  - `areaServed[string]`: La zone géographique où un service ou un article offert est fourni  . Model: [https://schema.org/Text](https://schema.org/Text)- `dataProvider[string]`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated[string]`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified[string]`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description[string]`: Une description de cet article  - `id[*]`: Identifiant unique de l'entité  - `location[*]`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `name[string]`: Le nom de cet élément.  - `owner[array]`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso[*]`: liste d'uri pointant vers des ressources supplémentaires sur l'article  - `source[string]`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type[string]`: Type d'entité NGSI. Il doit être ResourceReportForecast.  - `validFrom[string]`: Date et heure de début de la période de validité.  . Model: [https://schema.org/DateTime](https://schema.org/DateTime)- `validTo[string]`: Date et heure de fin de la période de validité.  . Model: [https://schema.org/DateTime](https://schema.org/DateTime)- `validity[string]`: Comprend la période de validité de cette prévision sous forme d'intervalle de temps ISO8601. Il peut également être utilisé deux attributs distincts : `validFrom`, `validTo`.  . Model: [https://schema.org/Text](https://schema.org/Text)<!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
 Propriétés requises  
-- `ResourceReport.number`  - `id`  - `type`  ## Description des propriétés du modèle de données  
+- `ResourceReport.number`  - `id`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-RequiredProperties -->  
+<!-- /40-RequiredProperties -->  
+<!-- 50-DataModelHeader -->  
+## Description des propriétés du modèle de données  
 Classés par ordre alphabétique (cliquez pour plus de détails)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 ResourceReportForecast:    
@@ -454,9 +468,14 @@ ResourceReportForecast:
   x-version: 0.0.2    
 ```  
 </details>    
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
 ## Exemples de charges utiles  
 #### Exemple de valeurs-clés NGSI-v2 ResourceReportForecast  
 Voici un exemple de ResourceReportForecast au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-v2 en utilisant `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "id": "http://example.org/resourcereport/1",  
@@ -491,8 +510,10 @@ ResourceReportForecast:
   "validTo": "2022-05-07T07:43:37Z"  
 }  
 ```  
+</details>  
 #### ResourceReportForecast NGSI-v2 normalisé Exemple  
 Voici un exemple de ResourceReportForecast au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "id": "http://example.org/resourcereport/1",  
@@ -557,8 +578,10 @@ ResourceReportForecast:
   }  
 }  
 ```  
+</details>  
 #### Rapport sur les ressources Prévision des valeurs clés NGSI-LD Exemple  
 Voici un exemple de ResourceReportForecast au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-LD quand on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
     "id": "http://example.org/resourcereport/1",  
@@ -598,8 +621,10 @@ ResourceReportForecast:
     ]  
 }  
 ```  
+</details>  
 #### ResourceReportForecast NGSI-LD normalisé Exemple  
 Voici un exemple de ResourceReportForecast au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
     "id": "http://example.org/resourcereport/1",  
@@ -674,4 +699,12 @@ ResourceReportForecast:
     ]  
 }  
 ```  
+</details><!-- /80-Examples -->  
+<!-- 90-FooterNotes -->  
+<!-- /90-FooterNotes -->  
+<!-- 95-Units -->  
 Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
+<!-- /95-Units -->  
+<!-- 97-LastFooter -->  
+---  
+[Smart Data Models](https://smartdatamodels.org) +++ [Contribution Manual](https://bit.ly/contribution_manual) +++ [About](https://bit.ly/Introduction_SDM)<!-- /97-LastFooter -->  
