@@ -92,7 +92,7 @@
             "displayName": "InfrastructureElement.geometry",
             "fields": [
                 {
-                    "name": "Geometry.wkt",
+                    "name": "Geometry.asWkt",
                     "schema": "string"
                 },
                 {
@@ -103,9 +103,9 @@
         },
         {
             "@type": "object",
-            "name": "ParkingFacility.^capacity",
+            "name": "ParkingFacility.capacity",
             "comment": "Capacity of a civic structure. ",
-            "displayName": "ParkingFacility.^capacity",
+            "displayName": "ParkingFacility.capacity",
             "fields": [
                 {
                     "name": "Capacity.total",

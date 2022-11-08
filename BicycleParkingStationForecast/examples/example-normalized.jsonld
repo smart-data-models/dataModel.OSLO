@@ -15,7 +15,7 @@
         "type": "Relationship",
         "object": {
             "type": "Geometry",
-            "Geometry.wkt": {
+            "Geometry.asWkt": {
                 "type": "Property",
                 "value": "POINT(3.313743000000 50.855703000000)"
             }
@@ -29,7 +29,7 @@
         ]
     },
     "@context": [
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/notes_context.jsonld",
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }
