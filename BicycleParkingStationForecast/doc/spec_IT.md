@@ -368,138 +368,142 @@ BicycleParkingStationForecast:
 #### BicycleParkingStationForecast Valori-chiave NGSI-v2 Esempio  
 Ecco un esempio di BicycleParkingStationForecast in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "Capacity",  
-    "Capacity.total": 20  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "Geometry",  
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-  },  
-  "location": {  
-    "type": "Point",  
-    "coordinates": [  
-      3.313743000000,  
-      50.855703000000  
-    ]  
-  }  
-}  
+```json
+{
+  "id": "https://blue-bike.be/stations/141",
+  "type": "BicycleParkingStationForecast",
+  "ParkingFacility.^capacity": {
+    "type": "Capacity",
+    "Capacity.total": 20
+  },
+  "InfrastructureElement.geometry": {
+    "type": "Geometry",
+    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      3.313743000000,
+      50.855703000000
+    ]
+  }
+}
+
 ```  
 </details>  
 #### BicycleParkingStationForecast NGSI-v2 normalizzato Esempio  
 Ecco un esempio di BicycleParkingStationForecast in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si utilizzano opzioni e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
-  "id": "https://blue-bike.be/stations/141",  
-  "type": "BicycleParkingStation",  
-  "ParkingFacility.^capacity": {  
-    "type": "StructuredValue",  
-    "value": {  
-      "type": "Capacity",  
-      "Capacity.total": {  
-        "type": "Number",  
-        "value": 20  
-      }  
-    }  
-  },  
-  "InfrastructureElement.geometry": {  
-    "type": "StructuredValue",  
-    "value": {  
-      "type": "Geometry",  
-      "Geometry.wkt": {  
-        "type": "Property",  
-        "value": "POINT(3.313743000000 50.855703000000)"  
-      }  
-    }  
-  },  
-  "location": {  
-    "type": "geo:json",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        3.313743000000,  
-        50.855703000000  
-      ]  
-    }  
-  }  
-}  
+```json
+{
+  "id": "https://blue-bike.be/stations/141",
+  "type": "BicycleParkingStationForecast",
+  "ParkingFacility.^capacity": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "Capacity",
+      "Capacity.total": {
+        "type": "Number",
+        "value": 20
+      }
+    }
+  },
+  "InfrastructureElement.geometry": {
+    "type": "StructuredValue",
+    "value": {
+      "type": "Geometry",
+      "Geometry.wkt": {
+        "type": "Property",
+        "value": "POINT(3.313743000000 50.855703000000)"
+      }
+    }
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        3.313743000000,
+        50.855703000000
+      ]
+    }
+  }
+}
+
 ```  
 </details>  
 #### BicycleParkingStationForecast Valori chiave NGSI-LD Esempio  
 Ecco un esempio di BicycleParkingStationForecast in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
-    "id": "https://blue-bike.be/stations/141",  
-    "type": "BicycleParkingStation",  
-    "ParkingFacility.^capacity": {  
-        "type": "Capacity",  
-        "Capacity.total": 20  
-    },  
-    "InfrastructureElement.geometry": {  
-        "type": "Geometry",  
-        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
-    },  
-    "location": {  
-        "type": "Point",  
-        "coordinates": [  
-            3.313743,  
-            50.855703  
-        ]  
-    },  
-    "@context": [  
-        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
-    ]  
-}  
+```json
+{
+    "id": "https://blue-bike.be/stations/141",
+    "type": "BicycleParkingStationForecast",
+    "ParkingFacility.capacity": {
+        "type": "Capacity",
+        "Capacity.total": 20
+    },
+    "InfrastructureElement.geometry": {
+        "type": "Geometry",
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"
+    },
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            3.313743,
+            50.855703
+        ]
+    },
+    "@context": [
+        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"
+    ]
+}
+
 ```  
 </details>  
 #### Previsione delle stazioni di parcheggio per biciclette Esempio normalizzato NGSI-LD  
 Ecco un esempio di BicycleParkingStationForecast in formato JSON-LD normalizzato. Questo è compatibile con NGSI-LD quando non si utilizzano opzioni e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
-    "id": "https://blue-bike.be/stations/141",  
-    "type": "BicycleParkingStation",  
-    "ParkingFacility.capacity": {  
-        "type": "Relationship",  
-        "object": {  
-            "type": "Capacity",  
-            "Capacity.total": {  
-                "type": "Property",  
-                "value": 20  
-            }  
-        }  
-    },  
-    "InfrastructureElement.geometry": {  
-        "type": "Relationship",  
-        "object": {  
-            "type": "Geometry",  
-            "Geometry.wkt": {  
-                "type": "Property",  
-                "value": "POINT(3.313743000000 50.855703000000)"  
-            }  
-        }  
-    },  
-    "location": {  
-        "type": "Point",  
-        "coordinates": [  
-            3.313743,  
-            50.855703  
-        ]  
-    },  
-    "@context": [  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-    ]  
-}  
-```  
+```json
+{
+    "id": "https://blue-bike.be/stations/141",
+    "type": "BicycleParkingStationForecast",
+    "ParkingFacility.capacity": {
+        "type": "Relationship",
+        "object": {
+            "type": "Capacity",
+            "Capacity.total": {
+                "type": "Property",
+                "value": 20
+            }
+        }
+    },
+    "InfrastructureElement.geometry": {
+        "type": "Relationship",
+        "object": {
+            "type": "Geometry",
+            "Geometry.wkt": {
+                "type": "Property",
+                "value": "POINT(3.313743000000 50.855703000000)"
+            }
+        }
+    },
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            3.313743,
+            50.855703
+        ]
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}
+
+```
 </details><!-- /80-Examples -->  
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
