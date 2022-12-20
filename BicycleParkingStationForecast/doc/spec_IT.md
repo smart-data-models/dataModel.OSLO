@@ -398,7 +398,7 @@ BicycleParkingStationForecast:
 {
   "id": "https://blue-bike.be/stations/141",
   "type": "BicycleParkingStationForecast",
-  "ParkingFacility.^capacity": {
+  "ParkingFacility.capacity": {
     "type": "StructuredValue",
     "value": {
       "type": "Capacity",
