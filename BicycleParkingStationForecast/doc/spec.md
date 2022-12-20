@@ -439,7 +439,7 @@ BicycleParkingStationForecast:
 {
     "id": "https://blue-bike.be/stations/141",
     "type": "BicycleParkingStationForecast",
-    "ParkingFacility.^capacity": {
+    "ParkingFacility.capacity": {
         "type": "Capacity",
         "Capacity.total": 20
     },
@@ -460,6 +460,7 @@ BicycleParkingStationForecast:
         "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"
     ]
 }
+
 ```  
 </details>  
 #### BicycleParkingStationForecast NGSI-LD normalized Example    
