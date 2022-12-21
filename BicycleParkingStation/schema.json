@@ -54,7 +54,7 @@
                 "Geometry"
               ]
             },
-            "Geometry.wkt": {
+            "Geometry.asWkt": {
               "type": "string",
               "description": "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format.",
               "properties": {
@@ -64,7 +64,7 @@
           },
           "required": [
             "type",
-            "Geometry.wkt"
+            "Geometry.asWkt"
           ]
         }
       }
