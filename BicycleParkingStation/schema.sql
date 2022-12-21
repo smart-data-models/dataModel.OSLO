@@ -1,0 +1,3 @@
+/* (Beta) Export of data model BicycleParkingStation of the subject dataModel.OSLO for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE BicycleParkingStation_type AS ENUM ('BicycleParkingStation');
+CREATE TABLE BicycleParkingStation (InfrastructureElement.geometry json, ParkingFacility.^capacity json, address json, alternateName text, areaServed text, dataProvider text, dateCreated timestamp, dateModified timestamp, description text, id text, location json, name text, owner json, seeAlso json, source text, type BicycleParkingStation_type);
