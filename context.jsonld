@@ -1,8 +1,10 @@
 {
     "@context": {
+        "BicycleParkingStation": "https://smartdatamodels.org/dataModel.OSLO/BicycleParkingStation",
+        "BicycleParkingStationForecast": "https://smartdatamodels.org/dataModel.OSLO/BicycleParkingStationForecast",
         "InfrastructureElement.geometry": "https://smartdatamodels.org/dataModel.OSLO/InfrastructureElement.geometry",
-        "ParkingFacility.^capacity": "https://smartdatamodels.org/dataModel.OSLO/ParkingFacility.^capacity",
         "ParkingFacility.capacity": "https://smartdatamodels.org/dataModel.OSLO/ParkingFacility.capacity",
+        "ResourceReport": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport",
         "ResourceReport.actuator": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.actuator",
         "ResourceReport.location": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.location",
         "ResourceReport.meansOfTransport": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.meansOfTransport",
@@ -11,6 +13,7 @@
         "ResourceReport.service": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.service",
         "ResourceReport.status": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.status",
         "ResourceReport.type": "https://smartdatamodels.org/dataModel.OSLO/ResourceReport.type",
+        "ResourceReportForecast": "https://smartdatamodels.org/dataModel.OSLO/ResourceReportForecast",
         "address": "https://smartdatamodels.org/address",
         "alternateName": "https://smartdatamodels.org/alternateName",
         "areaServed": "https://smartdatamodels.org/areaServed",
