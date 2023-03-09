@@ -15,7 +15,7 @@
     "type": "StructuredValue",
     "value": {
       "type": "Geometry",
-      "Geometry.wkt": {
+      "Geometry.asWkt": {
         "type": "Property",
         "value": "POINT(3.313743000000 50.855703000000)"
       }

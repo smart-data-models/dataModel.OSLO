@@ -92,7 +92,7 @@
             "displayName": "InfrastructureElement.geometry",
             "fields": [
                 {
-                    "name": "Geometry.wkt",
+                    "name": "Geometry.asWkt",
                     "schema": "string"
                 },
                 {

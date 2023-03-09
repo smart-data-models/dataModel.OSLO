@@ -7,7 +7,7 @@
   },
   "InfrastructureElement.geometry": {
     "type": "Geometry",
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"
+    "Geometry.asWkt": "POINT(3.313743000000 50.855703000000)"
   },
   "location": {
     "type": "Point",
