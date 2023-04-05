@@ -1,4 +1,5 @@
 # dataModel.OSLO
+Original source for the full ontology en English https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs
 
 ### List of data models
 
