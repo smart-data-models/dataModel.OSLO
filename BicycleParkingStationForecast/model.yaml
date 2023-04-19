@@ -2,7 +2,7 @@ BicycleParkingStationForecast:
   description: Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification
   properties:
     InfrastructureElement.geometry:
-      description: The geometry corresponding to the infrastructure element.
+      description: "Property. Model:'http://www.w3.org/ns/locn#geometry'. The geometry corresponding to the infrastructure element."
       properties:
         Geometry.asWkt:
           description: "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format."
@@ -21,7 +21,7 @@ BicycleParkingStationForecast:
         model: "http://www.w3.org/ns/locn#geometry"
         type: Property
     ParkingFacility.capacity:
-      description: 'Capacity of a civic structure. '
+      description: "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'. "
       properties:
         Capacity.total:
           description: "Property. Model: 'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."
@@ -298,28 +298,28 @@ BicycleParkingStationForecast:
       x-ngsi:
         type: Property
     type:
-      description: NGSI Entity type. It has to be BicycleParkingStation
+      description: Property. NGSI Entity type. It has to be BicycleParkingStation
       enum:
         - BicycleParkingStationForecast
       type: string
       x-ngsi:
         type: Property
     validFrom:
-      description: Validity period start date and time.
+      description: 'Property. Model:''https://schema.org/DateTime''. Validity period start date and time.'
       format: date-time
       type: string
       x-ngsi:
         model: https://schema.org/DateTime
         type: Property
     validTo:
-      description: Validity period end date and time.
+      description: 'Property. Model:''https://schema.org/DateTime''. Validity period end date and time.'
       format: date-time
       type: string
       x-ngsi:
         model: https://schema.org/DateTime
         type: Property
     validity:
-      description: 'Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`.'
+      description: 'Property. Model:''https://schema.org/Text''. Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`.'
       type: string
       x-ngsi:
         model: https://schema.org/Text
