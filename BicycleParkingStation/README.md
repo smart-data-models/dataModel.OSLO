@@ -1,5 +1,6 @@
-# BicycleParkingStation
-Version: 0.0.1
+[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)
+# BicycleParkingStation
+Version: 1.0.0
 
 ## Description 
 
@@ -19,6 +20,8 @@ Link zur [deutschen Spezifikation](https://github.com/smart-data-models/dataMode
 Link alla [specifica](https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStation/doc/spec_IT.md)
 
 [仕様へのリンク](https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStation/doc/spec_JA.md)
+
+[链接到规范](https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStation/doc/spec_ZH.md)
 ### Examples
 
 Link to the [example](https://smart-data-models.github.io/dataModel.OSLO/BicycleParkingStation/examples/example.json) (keyvalues) for NGSI v2
