@@ -55,6 +55,11 @@
             "comment": "A description of this item"
         },
         {
+            "name": "location",
+            "writable": true,
+            "displayName": "location"
+        },
+        {
             "name": "name",
             "writable": true,
             "displayName": "name",
@@ -88,7 +93,7 @@
         {
             "@type": "object",
             "name": "InfrastructureElement.geometry",
-            "comment": "The geometry corresponding to the infrastructure element.",
+            "comment": "Property. Model:'http://www.w3.org/ns/locn#geometry'. The geometry corresponding to the infrastructure element.",
             "displayName": "InfrastructureElement.geometry",
             "fields": [
                 {
@@ -103,9 +108,9 @@
         },
         {
             "@type": "object",
-            "name": "ParkingFacility.^capacity",
-            "comment": "Capacity of a civic structure. ",
-            "displayName": "ParkingFacility.^capacity",
+            "name": "ParkingFacility.capacity",
+            "comment": "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'",
+            "displayName": "ParkingFacility.capacity",
             "fields": [
                 {
                     "name": "Capacity.total",
@@ -136,6 +141,10 @@
                     "schema": "string"
                 },
                 {
+                    "name": "district",
+                    "schema": "string"
+                },
+                {
                     "name": "postOfficeBoxNumber",
                     "schema": "string"
                 },
@@ -146,38 +155,12 @@
                 {
                     "name": "streetAddress",
                     "schema": "string"
+                },
+                {
+                    "name": "streetNr",
+                    "schema": "string"
                 }
             ]
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_Point",
-            "schema": "point"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_LineString",
-            "schema": "lineString"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_Polygon",
-            "schema": "polygon"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiPoint",
-            "schema": "multiPoint"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiLineString",
-            "schema": "multiLineString"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiPolygon",
-            "schema": "multiPolygon"
         }
     ]
 }
