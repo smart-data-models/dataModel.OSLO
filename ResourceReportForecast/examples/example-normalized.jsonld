@@ -2,19 +2,19 @@
     "id": "http://example.org/resourcereport/1",
     "type": "ResourceReport",
     "ResourceReport.actuator": {
-        "type": "Relationship",
-        "object": {
+        "type": "Property",
+        "value": {
             "type": "ActuatorType",
             "ActuatorType.preferredLabel": "human"
         }
     },
     "ResourceReport.location": {
-        "type": "Relationship",
-        "object": "https://blue-bike.be/stations/141"
+        "type": "Property",
+        "value": "https://blue-bike.be/stations/141"
     },
     "ResourceReport.meansOfTransport": {
-        "type": "Relationship",
-        "object": {
+        "type": "Property",
+        "value": {
             "type": "MeansOfTransport",
             "MeansOfTransport.preferredLabel": "bicycle"
         }
@@ -24,19 +24,19 @@
         "value": 5
     },
     "ResourceReport.service": {
-        "type": "Relationship",
-        "object": "https://blue-bike.be/#me"
+        "type": "Property",
+        "value": "https://blue-bike.be/#me"
     },
     "ResourceReport.status": {
-        "type": "Relationship",
-        "object": {
+        "type": "Property",
+        "value": {
             "type": "ResourceStatus",
             "ResourceStatus.preferredLabel": "available"
         }
     },
     "ResourceReport.type": {
-        "type": "Relationship",
-        "object": {
+        "type": "Property",
+        "value": {
             "type": "ResourceType",
             "ResourceType.preferredLabel": "vehicle"
         }

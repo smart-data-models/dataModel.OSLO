@@ -5,13 +5,17 @@
     "type": "ActuatorType",
     "ActuatorType.preferredLabel": "human"
   },
-  "ResourceReport.location": "https://blue-bike.be/stations/141",
+  "ResourceReport.location": {
+    "object": "https://blue-bike.be/stations/141"
+  },
   "ResourceReport.meansOfTransport": {
     "type": "MeansOfTransport",
     "MeansOfTransport.preferredLabel": "bicycle"
   },
   "ResourceReport.number": 5,
-  "ResourceReport.service": "https://blue-bike.be/#me",
+  "ResourceReport.service": {
+    "object": "https://blue-bike.be/#me"
+  },
   "ResourceReport.status": {
     "type": "ResourceStatus",
     "ResourceStatus.preferredLabel": "available"
