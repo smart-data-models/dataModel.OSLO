@@ -4,7 +4,7 @@ BicycleParkingStationForecast:
     InfrastructureElement.geometry:
       description: The geometry corresponding to the infrastructure element.
       properties:
-        Geometry.wkt:
+        Geometry.asWkt:
           description: "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format."
           properties: {}
           type: string
@@ -15,7 +15,7 @@ BicycleParkingStationForecast:
           type: string
       required:
         - type
-        - Geometry.wkt
+        - Geometry.asWkt
       type: object
       x-ngsi:
         model: "http://www.w3.org/ns/locn#geometry"
@@ -333,4 +333,4 @@ BicycleParkingStationForecast:
   x-license-url: https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStationForecast/LICENSE.md
   x-model-schema: https://github.com/smart-data-models/dataModel.OSLO/raw/master/BicycleParkingStationForecast/schema.json
   x-model-tags: GreenMov
-  x-version: 0.1.0
+  x-version: 1.0.0
