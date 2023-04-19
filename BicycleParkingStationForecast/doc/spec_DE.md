@@ -8,13 +8,13 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Globale Beschreibung: **Fahrradparkplatz-Schema gemäß der Spezifikation für Personenverkehrsknotenpunkte AP-Schema**  
-Version: 0.1.0  
+Version: 1.0.0  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## Liste der Eigenschaften  
 
-<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, liegt das daran, dass es mehrere Typen oder unterschiedliche Formate/Muster haben kann</sub></sup>.  
+<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
 - `InfrastructureElement.geometry[object]`: Die Geometrie, die dem Infrastrukturelement entspricht.  . Model: [http://www.w3.org/ns/locn#geometry](http://www.w3.org/ns/locn#geometry)- `ParkingFacility.capacity[object]`: Kapazität einer zivilen Struktur.  . Model: [http://schema.mobivoc.org/#capacity](http://schema.mobivoc.org/#capacity)- `address[object]`: Die Postanschrift  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Ein alternativer Name für diesen Artikel  - `areaServed[string]`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  . Model: [https://schema.org/Text](https://schema.org/Text)- `dataProvider[string]`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateCreated[string]`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified[string]`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description[string]`: Eine Beschreibung dieses Artikels  - `id[*]`: Eindeutiger Bezeichner der Entität  - `location[*]`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name[string]`: Der Name dieses Artikels.  - `owner[array]`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `seeAlso[*]`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source[string]`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Es wird empfohlen, den voll qualifizierten Domänennamen des Quellanbieters oder die URL des Quellobjekts zu verwenden.  - `type[string]`: NGSI-Entitätstyp. Es muss BicycleParkingStation sein  - `validFrom[string]`: Datum und Uhrzeit des Beginns des Gültigkeitszeitraums.  . Model: [https://schema.org/DateTime](https://schema.org/DateTime)- `validTo[string]`: Datum und Uhrzeit des Endes des Gültigkeitszeitraums.  . Model: [https://schema.org/DateTime](https://schema.org/DateTime)- `validity[string]`: Enthält den Gültigkeitszeitraum für diese Prognose als ISO8601-Zeitintervall. Es können auch zwei getrennte Attribute verwendet werden: GültigVon", "GültigBis".  . Model: [https://schema.org/Text](https://schema.org/Text)<!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Erforderliche Eigenschaften  
@@ -29,12 +29,12 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 BicycleParkingStationForecast:    
-  description: 'Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification'    
+  description: Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification    
   properties:    
     InfrastructureElement.geometry:    
-      description: 'The geometry corresponding to the infrastructure element.'    
+      description: "Property. Model:'http://www.w3.org/ns/locn#geometry'. The geometry corresponding to the infrastructure element."    
       properties:    
-        Geometry.wkt:    
+        Geometry.asWkt:    
           description: "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format."    
           properties: {}    
           type: string    
@@ -45,13 +45,13 @@ BicycleParkingStationForecast:
           type: string    
       required:    
         - type    
-        - Geometry.wkt    
+        - Geometry.asWkt    
       type: object    
       x-ngsi:    
         model: "http://www.w3.org/ns/locn#geometry"    
         type: Property    
     ParkingFacility.capacity:    
-      description: 'Capacity of a civic structure. '    
+      description: "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'. "    
       properties:    
         Capacity.total:    
           description: "Property. Model: 'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."    
@@ -68,7 +68,7 @@ BicycleParkingStationForecast:
         model: "http://schema.mobivoc.org/#capacity"    
         type: Property    
     address:    
-      description: 'The mailing address'    
+      description: The mailing address    
       properties:    
         addressCountry:    
           description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''    
@@ -79,6 +79,9 @@ BicycleParkingStationForecast:
         addressRegion:    
           description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''    
           type: string    
+        district:    
+          description: 'A district is a type of administrative division that, in some countries, is managed by the local government.'    
+          type: string    
         postOfficeBoxNumber:    
           description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''    
           type: string    
@@ -88,60 +91,63 @@ BicycleParkingStationForecast:
         streetAddress:    
           description: 'Property. The street address. Model:''https://schema.org/streetAddress'''    
           type: string    
+        streetNr:    
+          description: Number identifying a specific property on a public street.    
+          type: string    
       type: object    
       x-ngsi:    
         model: https://schema.org/address    
         type: Property    
     alternateName:    
-      description: 'An alternative name for this item'    
+      description: An alternative name for this item    
       type: string    
       x-ngsi:    
         type: Property    
     areaServed:    
-      description: 'The geographic area where a service or offered item is provided'    
+      description: The geographic area where a service or offered item is provided    
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
         type: Property    
     dataProvider:    
-      description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
+      description: A sequence of characters identifying the provider of the harmonised data entity.    
       type: string    
       x-ngsi:    
         type: Property    
     dateCreated:    
-      description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'    
+      description: Entity creation timestamp. This will usually be allocated by the storage platform.    
       format: date-time    
       type: string    
       x-ngsi:    
         type: Property    
     dateModified:    
-      description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'    
+      description: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.    
       format: date-time    
       type: string    
       x-ngsi:    
         type: Property    
     description:    
-      description: 'A description of this item'    
+      description: A description of this item    
       type: string    
       x-ngsi:    
         type: Property    
     id:    
       anyOf: &bicycleparkingstationforecast_-_properties_-_owner_-_items_-_anyof    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Property. Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Property. Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
-        - description: 'GeoProperty. Geojson reference to the item. Point'    
+        - description: GeoProperty. Geojson reference to the item. Point    
           properties:    
             bbox:    
               items:    
@@ -160,9 +166,9 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON Point'    
+          title: GeoJSON Point    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. LineString'    
+        - description: GeoProperty. Geojson reference to the item. LineString    
           properties:    
             bbox:    
               items:    
@@ -184,9 +190,9 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON LineString'    
+          title: GeoJSON LineString    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. Polygon'    
+        - description: GeoProperty. Geojson reference to the item. Polygon    
           properties:    
             bbox:    
               items:    
@@ -210,9 +216,9 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON Polygon'    
+          title: GeoJSON Polygon    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiPoint'    
+        - description: GeoProperty. Geojson reference to the item. MultiPoint    
           properties:    
             bbox:    
               items:    
@@ -233,9 +239,9 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiPoint'    
+          title: GeoJSON MultiPoint    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiLineString'    
+        - description: GeoProperty. Geojson reference to the item. MultiLineString    
           properties:    
             bbox:    
               items:    
@@ -259,9 +265,9 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiLineString'    
+          title: GeoJSON MultiLineString    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiLineString'    
+        - description: GeoProperty. Geojson reference to the item. MultiLineString    
           properties:    
             bbox:    
               items:    
@@ -287,25 +293,25 @@ BicycleParkingStationForecast:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiPolygon'    
+          title: GeoJSON MultiPolygon    
           type: object    
       x-ngsi:    
         type: GeoProperty    
     name:    
-      description: 'The name of this item.'    
+      description: The name of this item.    
       type: string    
       x-ngsi:    
         type: Property    
     owner:    
-      description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
+      description: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)    
       items:    
         anyOf: *bicycleparkingstationforecast_-_properties_-_owner_-_items_-_anyof    
-        description: 'Property. Unique identifier of the entity'    
+        description: Property. Unique identifier of the entity    
       type: array    
       x-ngsi:    
         type: Property    
     seeAlso:    
-      description: 'list of uri pointing to additional resources about the item'    
+      description: list of uri pointing to additional resources about the item    
       oneOf:    
         - items:    
             format: uri    
@@ -322,28 +328,28 @@ BicycleParkingStationForecast:
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI Entity type. It has to be BicycleParkingStation'    
+      description: Property. NGSI Entity type. It has to be BicycleParkingStation    
       enum:    
         - BicycleParkingStationForecast    
       type: string    
       x-ngsi:    
         type: Property    
     validFrom:    
-      description: 'Validity period start date and time.'    
+      description: 'Property. Model:''https://schema.org/DateTime''. Validity period start date and time.'    
       format: date-time    
       type: string    
       x-ngsi:    
         model: https://schema.org/DateTime    
         type: Property    
     validTo:    
-      description: 'Validity period end date and time.'    
+      description: 'Property. Model:''https://schema.org/DateTime''. Validity period end date and time.'    
       format: date-time    
       type: string    
       x-ngsi:    
         model: https://schema.org/DateTime    
         type: Property    
     validity:    
-      description: 'Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`.'    
+      description: 'Property. Model:''https://schema.org/Text''. Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`.'    
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
@@ -357,7 +363,7 @@ BicycleParkingStationForecast:
   x-license-url: https://github.com/smart-data-models/dataModel.OSLO/blob/master/BicycleParkingStationForecast/LICENSE.md    
   x-model-schema: https://github.com/smart-data-models/dataModel.OSLO/raw/master/BicycleParkingStationForecast/schema.json    
   x-model-tags: GreenMov    
-  x-version: 0.1.0    
+  x-version: 1.0.0    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -366,144 +372,142 @@ BicycleParkingStationForecast:
 <!-- 80-Examples -->  
 ## Beispiel-Nutzlasten  
 #### BicycleParkingStationForecast NGSI-v2 key-values Beispiel  
-Hier ist ein Beispiel für einen BicycleParkingStationForecast im JSON-LD-Format als Key-Values. Dies ist mit NGSI-v2 kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für einen BicycleParkingStationForecast im JSON-LD-Format als Key-Values. Dies ist kompatibel mit NGSI-v2, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json
-{
-  "id": "https://blue-bike.be/stations/141",
-  "type": "BicycleParkingStationForecast",
-  "ParkingFacility.^capacity": {
-    "type": "Capacity",
-    "Capacity.total": 20
-  },
-  "InfrastructureElement.geometry": {
-    "type": "Geometry",
-    "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"
-  },
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      3.313743000000,
-      50.855703000000
-    ]
-  }
-}
-
+```json  
+{  
+  "id": "https://blue-bike.be/stations/141",  
+  "type": "BicycleParkingStationForecast",  
+  "ParkingFacility.capacity": {  
+    "type": "Capacity",  
+    "Capacity.total": 20  
+  },  
+  "InfrastructureElement.geometry": {  
+    "type": "Geometry",  
+    "Geometry.asWkt": "POINT(3.313743000000 50.855703000000)"  
+  },  
+  "location": {  
+    "type": "Point",  
+    "coordinates": [  
+      3.313743000000,  
+      50.855703000000  
+    ]  
+  }  
+}  
 ```  
 </details>  
 #### BicycleParkingStationForecast NGSI-v2 normalisiert Beispiel  
 Hier ist ein Beispiel für einen BicycleParkingStationForecast im JSON-LD-Format in normalisierter Form. Dies ist kompatibel mit NGSI-v2, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json
-{
-  "id": "https://blue-bike.be/stations/141",
-  "type": "BicycleParkingStationForecast",
-  "ParkingFacility.capacity": {
-    "type": "StructuredValue",
-    "value": {
-      "type": "Capacity",
-      "Capacity.total": {
-        "type": "Number",
-        "value": 20
-      }
-    }
-  },
-  "InfrastructureElement.geometry": {
-    "type": "StructuredValue",
-    "value": {
-      "type": "Geometry",
-      "Geometry.wkt": {
-        "type": "Property",
-        "value": "POINT(3.313743000000 50.855703000000)"
-      }
-    }
-  },
-  "location": {
-    "type": "geo:json",
-    "value": {
-      "type": "Point",
-      "coordinates": [
-        3.313743000000,
-        50.855703000000
-      ]
-    }
-  }
-}
-
+```json  
+{  
+  "id": "https://blue-bike.be/stations/141",  
+  "type": "BicycleParkingStationForecast",  
+  "ParkingFacility.capacity": {  
+    "type": "StructuredValue",  
+    "value": {  
+      "type": "Capacity",  
+      "Capacity.total": {  
+        "type": "Number",  
+        "value": 20  
+      }  
+    }  
+  },  
+  "InfrastructureElement.geometry": {  
+    "type": "StructuredValue",  
+    "value": {  
+      "type": "Geometry",  
+      "Geometry.asWkt": {  
+        "type": "Property",  
+        "value": "POINT(3.313743000000 50.855703000000)"  
+      }  
+    }  
+  },  
+  "location": {  
+    "type": "geo:json",  
+    "value": {  
+      "type": "Point",  
+      "coordinates": [  
+        3.313743000000,  
+        50.855703000000  
+      ]  
+    }  
+  }  
+}  
 ```  
 </details>  
 #### BicycleParkingStationForecast NGSI-LD Schlüsselwerte Beispiel  
 Hier ist ein Beispiel für einen BicycleParkingStationForecast im JSON-LD-Format als Key-Values. Dies ist mit NGSI-LD kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json
-{
-    "id": "https://blue-bike.be/stations/141",
-    "type": "BicycleParkingStationForecast",
-    "ParkingFacility.capacity": {
-        "type": "Capacity",
-        "Capacity.total": 20
-    },
-    "InfrastructureElement.geometry": {
-        "type": "Geometry",
-        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"
-    },
-    "location": {
-        "type": "Point",
-        "coordinates": [
-            3.313743,
-            50.855703
-        ]
-    },
-    "@context": [
-        "https://brechtvdv.github.io/incubated/dataModel.OSLO.PassengerTransportHubs/context.jsonld",
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"
-    ]
-}
-
+```json  
+{  
+    "id": "https://blue-bike.be/stations/141",  
+    "type": "BicycleParkingStationForecast",  
+    "ParkingFacility.capacity": {  
+        "type": "Capacity",  
+        "Capacity.total": 20  
+    },  
+    "InfrastructureElement.geometry": {  
+        "type": "Geometry",  
+        "Geometry.wkt": "POINT(3.313743000000 50.855703000000)"  
+    },  
+    "location": {  
+        "type": "Point",  
+        "coordinates": [  
+            3.313743,  
+            50.855703  
+        ]  
+    },  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld"  
+    ]  
+}  
 ```  
 </details>  
-#### BicycleParkingStationForecast NGSI-LD normalisiert Beispiel  
+#### FahrradParkplatzVorhersage NGSI-LD normalisiert Beispiel  
 Hier ist ein Beispiel für einen BicycleParkingStationForecast im JSON-LD-Format in normalisierter Form. Dies ist kompatibel mit NGSI-LD, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json
-{
-    "id": "https://blue-bike.be/stations/141",
-    "type": "BicycleParkingStationForecast",
-    "ParkingFacility.capacity": {
-        "type": "Relationship",
-        "object": {
-            "type": "Capacity",
-            "Capacity.total": {
-                "type": "Property",
-                "value": 20
-            }
-        }
-    },
-    "InfrastructureElement.geometry": {
-        "type": "Relationship",
-        "object": {
-            "type": "Geometry",
-            "Geometry.wkt": {
-                "type": "Property",
-                "value": "POINT(3.313743000000 50.855703000000)"
-            }
-        }
-    },
-    "location": {
-        "type": "Point",
-        "coordinates": [
-            3.313743,
-            50.855703
-        ]
-    },
-    "@context": [
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-    ]
-}
-
-```
+```json  
+{  
+  "id": "https://blue-bike.be/stations/141",  
+  "type": "BicycleParkingStationForecast",  
+  "ParkingFacility.capacity": {  
+    "type": "Property",  
+    "value": {  
+      "type": "Capacity",  
+      "Capacity.total": {  
+        "type": "Property",  
+        "value": 20  
+      }  
+    }  
+  },  
+  "InfrastructureElement.geometry": {  
+    "type": "Property",  
+    "value": {  
+      "type": "Geometry",  
+      "Geometry.wkt": {  
+        "type": "Property",  
+        "value": "POINT(3.313743000000 50.855703000000)"  
+      }  
+    }  
+  },  
+  "location": {  
+    "type": "GeoProperty",  
+    "value": {  
+      "type": "Point",  
+      "coordinates": [  
+        3.313743,  
+        50.855703  
+      ]  
+    }  
+  },  
+  "@context": [  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.OSLO/master/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+  ]  
+}  
+```  
 </details><!-- /80-Examples -->  
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
