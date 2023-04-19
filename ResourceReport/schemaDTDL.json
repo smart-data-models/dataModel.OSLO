@@ -11,8 +11,8 @@
             "writable": true,
             "displayName": "ResourceReport.number",
             "@type": "Property",
-            "schema": "integer",
-            "comment": "The number of resources."
+            "schema": "long",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#number'. The number of resources."
         },
         {
             "name": "ResourceReport.reportTime",
@@ -20,7 +20,7 @@
             "displayName": "ResourceReport.reportTime",
             "@type": "Property",
             "schema": "dateTime",
-            "comment": "Point in time for which the report is valid."
+            "comment": "Property. Model:'http://purl.org/dc/elements/1.1/date'. Point in time for which the report is valid."
         },
         {
             "name": "alternateName",
@@ -71,6 +71,11 @@
             "comment": "A description of this item"
         },
         {
+            "name": "location",
+            "writable": true,
+            "displayName": "location"
+        },
+        {
             "name": "name",
             "writable": true,
             "displayName": "name",
@@ -104,7 +109,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.actuator",
-            "comment": "Engine of the means of transport.",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#actuator'. Engine of the means of transport.",
             "displayName": "ResourceReport.actuator",
             "fields": [
                 {
@@ -120,7 +125,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.location",
-            "comment": "Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#location'. Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.",
             "displayName": "ResourceReport.location",
             "fields": [
                 {
@@ -136,7 +141,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.meansOfTransport",
-            "comment": "The type of means of transport of the Resource.",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel'. The type of means of transport of the Resource.",
             "displayName": "ResourceReport.meansOfTransport",
             "fields": [
                 {
@@ -152,7 +157,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.service",
-            "comment": "The MobilityService used within the ResourceReport.",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#service'. The MobilityService used within the ResourceReport.",
             "displayName": "ResourceReport.service",
             "fields": [
                 {
@@ -168,7 +173,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.status",
-            "comment": "State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used.",
+            "comment": "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#status'. State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used.",
             "displayName": "ResourceReport.status",
             "fields": [
                 {
@@ -184,7 +189,7 @@
         {
             "@type": "object",
             "name": "ResourceReport.type",
-            "comment": "Nature of the Resource.",
+            "comment": "Property. Model:'http://purl.org/dc/terms/type'. Nature of the Resource.",
             "displayName": "ResourceReport.type",
             "fields": [
                 {
@@ -216,6 +221,10 @@
                     "schema": "string"
                 },
                 {
+                    "name": "district",
+                    "schema": "string"
+                },
+                {
                     "name": "postOfficeBoxNumber",
                     "schema": "string"
                 },
@@ -226,38 +235,12 @@
                 {
                     "name": "streetAddress",
                     "schema": "string"
+                },
+                {
+                    "name": "streetNr",
+                    "schema": "string"
                 }
             ]
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_Point",
-            "schema": "point"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_LineString",
-            "schema": "lineString"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_Polygon",
-            "schema": "polygon"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiPoint",
-            "schema": "multiPoint"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiLineString",
-            "schema": "multiLineString"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "location_MultiPolygon",
-            "schema": "multiPolygon"
         }
     ]
 }
