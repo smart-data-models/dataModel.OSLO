@@ -2,7 +2,7 @@ ResourceReport:
   description: Resource Report Schema meeting Passenger Transport Hubs AP Schema specification. A summary of resources connected to mobility services based on defined filters by the person requesting the report.
   properties:
     ResourceReport.actuator:
-      description: Engine of the means of transport.
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#actuator'. Engine of the means of transport."
       properties:
         ActuatorType.preferredLabel:
           description: "Property. Model: 'http://www.w3.org/2004/02/skos/core#prefLabel'. Preferred label. Enum:'combustionEngine, electric, electricWithSupport, human'"
@@ -24,7 +24,7 @@ ResourceReport:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#actuator"
         type: Property
     ResourceReport.location:
-      description: 'Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport.'
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#location'. Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport."
       properties:
         object:
           format: uri
@@ -36,7 +36,7 @@ ResourceReport:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#location"
         type: Property
     ResourceReport.meansOfTransport:
-      description: The type of means of transport of the Resource.
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel'. The type of means of transport of the Resource."
       properties:
         MeansOfTransport.preferredLabel:
           description: "Property. Model: 'http://www.w3.org/2004/02/skos/core#prefLabel'. Preferred label. Enum:'airplane, bicycle, boat, bus, car, escalator, lift, motorcycle, onFoot, pedelec, scooter, skateboard, step, subway, train, tram, treadmill, truck'"
@@ -72,20 +72,20 @@ ResourceReport:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel"
         type: Property
     ResourceReport.number:
-      description: The number of resources.
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#number'. The number of resources."
       type: number
       x-ngsi:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#number"
         type: Property
     ResourceReport.reportTime:
-      description: Point in time for which the report is valid.
+      description: 'Property. Model:''http://purl.org/dc/elements/1.1/date''. Point in time for which the report is valid.'
       format: date-time
       type: string
       x-ngsi:
         model: http://purl.org/dc/elements/1.1/date
         type: Property
     ResourceReport.service:
-      description: The MobilityService used within the ResourceReport.
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#service'. The MobilityService used within the ResourceReport."
       properties:
         object:
           format: uri
@@ -97,7 +97,7 @@ ResourceReport:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#service"
         type: Property
     ResourceReport.status:
-      description: 'State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used.'
+      description: "Property. Model:'https://purl.eu/ns/mobility/passenger-transport-hubs#status'. State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used."
       properties:
         ResourceStatus.preferredLabel:
           description: "Property. Model: 'http://www.w3.org/2004/02/skos/core#prefLabel'. Preferred label. Enum:'available, deleted, inactive, inUse, relocated, reserved, unavailable'"
@@ -122,7 +122,7 @@ ResourceReport:
         model: "https://purl.eu/ns/mobility/passenger-transport-hubs#status"
         type: Property
     ResourceReport.type:
-      description: Nature of the Resource.
+      description: 'Property. Model:''http://purl.org/dc/terms/type''. Nature of the Resource.'
       properties:
         ResourceType.preferredLabel:
           description: "Property. Model: 'http://www.w3.org/2004/02/skos/core#prefLabel'. Preferred label. Enum:'chargingStation, parkingSpace, room, seating, vehicle'"
@@ -405,7 +405,7 @@ ResourceReport:
       x-ngsi:
         type: Property
     type:
-      description: NGSI Entity type. It has to be ResourceReport.
+      description: Property. NGSI Entity type. It has to be ResourceReport.
       enum:
         - ResourceReport
       type: string
