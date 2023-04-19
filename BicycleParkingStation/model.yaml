@@ -2,7 +2,7 @@ BicycleParkingStation:
   description: Bicycle Parking Station Schema meeting Passenger Transport Hubs AP Schema specification
   properties:
     InfrastructureElement.geometry:
-      description: The geometry corresponding to the infrastructure element.
+      description: "Property. Model:'http://www.w3.org/ns/locn#geometry'. The geometry corresponding to the infrastructure element."
       properties:
         Geometry.asWkt:
           description: "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format."
@@ -21,7 +21,7 @@ BicycleParkingStation:
         model: "http://www.w3.org/ns/locn#geometry"
         type: Property
     ParkingFacility.capacity:
-      description: Capacity of a civic structure
+      description: "Property. Capacity of a civic structure. Model:'http://schema.mobivoc.org/#capacity'"
       properties:
         Capacity.total:
           description: "Property. Model:'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."
@@ -298,7 +298,7 @@ BicycleParkingStation:
       x-ngsi:
         type: Property
     type:
-      description: NGSI Entity type. It has to be BicycleParkingStation
+      description: Property. NGSI Entity type. It has to be BicycleParkingStation
       enum:
         - BicycleParkingStation
       type: string
