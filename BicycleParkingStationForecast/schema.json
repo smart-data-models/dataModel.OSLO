@@ -36,7 +36,7 @@
                         },
                         "Capacity.total": {
                             "type": "number",
-                            "description": "Property. Model: 'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource."
+                            "description": "Property. Model: 'http://schema.mobivoc.org/#totalCapacity'. Indicates the capacity of a resource"
                         }
                     },
                     "required": [
@@ -57,7 +57,7 @@
                         },
                         "Geometry.asWkt": {
                             "type": "string",
-                            "description": "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format.",
+                            "description": "Property. Model:'http://www.opengis.net/ont/geosparql#asWKT'. Geometry expressed in wkt format",
                             "properties": {}
                         }
                     },
