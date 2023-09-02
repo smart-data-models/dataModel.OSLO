@@ -1,14 +1,11 @@
 ResourceReportForecast:
-
   description: Resource Report Forecast Schema meeting Passenger Transport Hubs AP Schema specification. A summary of the expectations of the resources connected to mobility services based on defined filters by the person requesting the report.
-
   properties:
-
     ResourceReport.actuator:
       description: Engine of the means of transport
       properties:
         ActuatorType.preferredLabel:
-          description: Preferred label. Enum:'combustionEngine, electric, electricWithSupport, human'
+          description: 'Preferred label. Enum:''combustionEngine, electric, electricWithSupport, human'''
           enum:
             - combustionEngine
             - electric
@@ -16,7 +13,7 @@ ResourceReportForecast:
             - human
           type: string
           x-ngsi:
-            model: ' http://www.w3.org/2004/02/skos/core#prefLabel'
+            model: " http://www.w3.org/2004/02/skos/core#prefLabel"
             type: Property
         type:
           enum:
@@ -27,11 +24,10 @@ ResourceReportForecast:
         - ActuatorType.preferredLabel
       type: object
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#actuator
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#actuator"
         type: Property
-
     ResourceReport.location:
-      description: Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport
+      description: 'Location of the Resource. This could be a bike parking station or the real-time location of the vehicle, e.g. in free-floating part transport'
       properties:
         object:
           format: uri
@@ -40,14 +36,13 @@ ResourceReportForecast:
           type: string
       type: object
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#location
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#location"
         type: Property
-
     ResourceReport.meansOfTransport:
       description: The type of means of transport of the Resource
       properties:
         MeansOfTransport.preferredLabel:
-          description: Preferred label. Enum:'airplane, bicycle, boat, bus, car, escalator, lift, motorcycle, onFoot, pedelec, scooter, skateboard, step, subway, train, tram, treadmill, truck'
+          description: 'Preferred label. Enum:''airplane, bicycle, boat, bus, car, escalator, lift, motorcycle, onFoot, pedelec, scooter, skateboard, step, subway, train, tram, treadmill, truck'''
           enum:
             - airplane
             - bicycle
@@ -69,7 +64,7 @@ ResourceReportForecast:
             - truck
           type: string
           x-ngsi:
-            model: ' http://www.w3.org/2004/02/skos/core#prefLabel'
+            model: " http://www.w3.org/2004/02/skos/core#prefLabel"
             type: Property
         type:
           enum:
@@ -80,16 +75,14 @@ ResourceReportForecast:
         - MeansOfTransport.preferredLabel
       type: object
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel"
         type: Property
-
     ResourceReport.number:
       description: The number of resources
       type: number
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#number
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#number"
         type: Property
-
     ResourceReport.reportTime:
       description: Point in time for which the report is valid
       format: date-time
@@ -97,7 +90,6 @@ ResourceReportForecast:
       x-ngsi:
         model: http://purl.org/dc/elements/1.1/date
         type: Property
-
     ResourceReport.service:
       description: The MobilityService used within the ResourceReport
       properties:
@@ -108,14 +100,13 @@ ResourceReportForecast:
           type: string
       type: object
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#service
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#service"
         type: Property
-
     ResourceReport.status:
-      description: State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used
+      description: 'State of a Resource. E.g. reserved, inactive, available. Determines whether a resource can be used'
       properties:
         ResourceStatus.preferredLabel:
-          description: Preferred label. Enum:'available, deleted, inactive, inUse, relocated, reserved, unavailable'
+          description: 'Preferred label. Enum:''available, deleted, inactive, inUse, relocated, reserved, unavailable'''
           enum:
             - available
             - deleted
@@ -126,7 +117,7 @@ ResourceReportForecast:
             - unavailable
           type: string
           x-ngsi:
-            model: ' http://www.w3.org/2004/02/skos/core#prefLabel'
+            model: " http://www.w3.org/2004/02/skos/core#prefLabel"
             type: Property
         type:
           enum:
@@ -137,14 +128,13 @@ ResourceReportForecast:
         - ResourceStatus.preferredLabel
       type: object
       x-ngsi:
-        model: https://purl.eu/ns/mobility/passenger-transport-hubs#status
+        model: "https://purl.eu/ns/mobility/passenger-transport-hubs#status"
         type: Property
-
     ResourceReport.type:
       description: Nature of the Resource
       properties:
         ResourceType.preferredLabel:
-          description: Preferred label. Enum:'chargingStation, parkingSpace, room, seating, vehicle'
+          description: 'Preferred label. Enum:''chargingStation, parkingSpace, room, seating, vehicle'''
           enum:
             - chargingStation
             - parkingSpace
@@ -153,7 +143,7 @@ ResourceReportForecast:
             - vehicle
           type: string
           x-ngsi:
-            model: ' http://www.w3.org/2004/02/skos/core#prefLabel'
+            model: " http://www.w3.org/2004/02/skos/core#prefLabel"
             type: Property
         type:
           enum:
@@ -166,112 +156,92 @@ ResourceReportForecast:
       x-ngsi:
         model: http://purl.org/dc/terms/type
         type: Property
-
     address:
-
       description: The mailing address
-
       properties:
-
         addressCountry:
-          description: The country. For example, Spain
+          description: 'The country. For example, Spain'
           type: string
           x-ngsi:
             model: https://schema.org/addressCountry
             type: Property
-
         addressLocality:
-          description: The locality in which the street address is, and which is in the region
+          description: 'The locality in which the street address is, and which is in the region'
           type: string
           x-ngsi:
             model: https://schema.org/addressLocality
             type: Property
-
         addressRegion:
-          description: The region in which the locality is, and which is in the country
+          description: 'The region in which the locality is, and which is in the country'
           type: string
           x-ngsi:
             model: https://schema.org/addressRegion
             type: Property
-
         district:
-          description: A district is a type of administrative division that, in some countries, is managed by the local government
+          description: 'A district is a type of administrative division that, in some countries, is managed by the local government'
           type: string
           x-ngsi:
             type: Property
-
         postOfficeBoxNumber:
-          description: The post office box number for PO box addresses. For example, 03578
+          description: 'The post office box number for PO box addresses. For example, 03578'
           type: string
           x-ngsi:
             model: https://schema.org/postOfficeBoxNumber
             type: Property
-
         postalCode:
-          description: The postal code. For example, 24004
+          description: 'The postal code. For example, 24004'
           type: string
           x-ngsi:
             model: https://schema.org/https://schema.org/postalCode
             type: Property
-
         streetAddress:
           description: The street address
           type: string
           x-ngsi:
             model: https://schema.org/streetAddress
             type: Property
-
         streetNr:
           description: Number identifying a specific property on a public street
           type: string
           x-ngsi:
             type: Property
-
       type: object
-
       x-ngsi:
         model: https://schema.org/address
         type: Property
-
     alternateName:
       description: An alternative name for this item
       type: string
       x-ngsi:
         type: Property
-
     areaServed:
       description: The geographic area where a service or offered item is provided
       type: string
       x-ngsi:
         model: https://schema.org/Text
         type: Property
-
     dataProvider:
       description: A sequence of characters identifying the provider of the harmonised data entity
       type: string
       x-ngsi:
         type: Property
-
     dateCreated:
       description: Entity creation timestamp. This will usually be allocated by the storage platform
       format: date-time
       type: string
       x-ngsi:
         type: Property
-
     dateModified:
       description: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform
       format: date-time
       type: string
       x-ngsi:
         type: Property
-
     description:
       description: A description of this item
       type: string
       x-ngsi:
         type: Property
-
     id:
       anyOf:
         - description: Identifier format of any NGSI entity
@@ -289,13 +259,9 @@ ResourceReportForecast:
       description: Unique identifier of the entity
       x-ngsi:
         type: Property
-
     location:
-
-      description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
-
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
-
         - description: Geojson reference to the item. Point
           properties:
             bbox:
@@ -319,7 +285,6 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
         - description: Geojson reference to the item. LineString
           properties:
             bbox:
@@ -346,7 +311,6 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
         - description: Geojson reference to the item. Polygon
           properties:
             bbox:
@@ -375,7 +339,6 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
         - description: Geojson reference to the item. MultiPoint
           properties:
             bbox:
@@ -401,7 +364,6 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
         - description: Geojson reference to the item. MultiLineString
           properties:
             bbox:
@@ -430,7 +392,6 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
         - description: Geojson reference to the item. MultiLineString
           properties:
             bbox:
@@ -461,16 +422,13 @@ ResourceReportForecast:
           type: object
           x-ngsi:
             type: GeoProperty
-
       x-ngsi:
         type: GeoProperty
-
     name:
       description: The name of this item
       type: string
       x-ngsi:
         type: Property
-
     owner:
       description: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)
       items:
@@ -493,7 +451,6 @@ ResourceReportForecast:
       type: array
       x-ngsi:
         type: Property
-
     seeAlso:
       description: list of uri pointing to additional resources about the item
       oneOf:
@@ -506,13 +463,11 @@ ResourceReportForecast:
           type: string
       x-ngsi:
         type: Property
-
     source:
-      description: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object'
       type: string
       x-ngsi:
         type: Property
-
     type:
       description: NGSI Entity type. It has to be ResourceReportForecast
       enum:
@@ -520,7 +475,6 @@ ResourceReportForecast:
       type: string
       x-ngsi:
         type: Property
-
     validFrom:
       description: Validity period start date and time
       format: date-time
@@ -528,7 +482,6 @@ ResourceReportForecast:
       x-ngsi:
         model: https://schema.org/DateTime
         type: Property
-
     validTo:
       description: Validity period end date and time
       format: date-time
@@ -536,29 +489,20 @@ ResourceReportForecast:
       x-ngsi:
         model: https://schema.org/DateTime
         type: Property
-
     validity:
       description: 'Includes the validity period for this forecast as a ISO8601 time interval. It can be also used two separate attributes: `validFrom`, `validTo`'
       type: string
       x-ngsi:
         model: https://schema.org/Text
         type: Property
-
   required:
     - id
     - type
     - ResourceReport.number
-
   type: object
-
-  x-derived-from: ''
-
-  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program
-
+  x-derived-from: ""
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.OSLO/blob/master/ResourceReportForecast/LICENSE.md
-
   x-model-schema: https://github.com/smart-data-models/dataModel.OSLO/raw/master/ResourceReport/schema.json
-
   x-model-tags: GreenMov
-
   x-version: 0.0.2
