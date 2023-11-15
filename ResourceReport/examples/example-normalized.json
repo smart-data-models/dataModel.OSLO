@@ -1,22 +1,22 @@
 {
-  "id": "http://example.org/resourcereport/1",
-  "type": "ResourceReport",
   "ResourceReport.actuator": {
     "type": "StructuredValue",
     "value": {
-        "type": "ActuatorType",
-        "ActuatorType.preferredLabel": "human"
+      "ActuatorType.preferredLabel": "human",
+      "type": "ActuatorType"
     }
   },
   "ResourceReport.location": {
-    "type": "URL",
-    "value": "https://blue-bike.be/stations/141"
+    "type": "StructuredValue",
+    "value": {
+      "object": "https://blue-bike.be/stations/141"
+    }
   },
   "ResourceReport.meansOfTransport": {
     "type": "StructuredValue",
     "value": {
-        "type": "MeansOfTransport",
-        "MeansOfTransport.preferredLabel": "bicycle"
+      "MeansOfTransport.preferredLabel": "bicycle",
+      "type": "MeansOfTransport"
     }
   },
   "ResourceReport.number": {
@@ -24,31 +24,35 @@
     "value": 5
   },
   "ResourceReport.service": {
-    "type": "URL",
-    "value": "https://blue-bike.be/#me"
+    "type": "StructuredValue",
+    "value": {
+      "object": "https://blue-bike.be/#me"
+    }
   },
   "ResourceReport.status": {
     "type": "StructuredValue",
     "value": {
-        "type": "ResourceStatus",
-        "ResourceStatus.preferredLabel": "available"
+      "ResourceStatus.preferredLabel": "available",
+      "type": "ResourceStatus"
     }
   },
   "ResourceReport.type": {
     "type": "StructuredValue",
     "value": {
-        "type": "ResourceType",
-        "ResourceType.preferredLabel": "vehicle"
+      "ResourceType.preferredLabel": "vehicle",
+      "type": "ResourceType"
     }
   },
+  "id": "http://example.org/resourcereport/1",
   "location": {
     "type": "geo:json",
     "value": {
-      "type": "Point",
       "coordinates": [
-        3.313743000000,
-        50.855703000000
-      ]
+        3.313743,
+        50.855703
+      ],
+      "type": "Point"
     }
-  }
+  },
+  "type": "ResourceReport"
 }
