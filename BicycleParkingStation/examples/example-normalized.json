@@ -5,20 +5,14 @@
     "type": "StructuredValue",
     "value": {
       "type": "Capacity",
-      "Capacity.total": {
-        "type": "Number",
-        "value": 20
-      }
+      "Capacity.total": 20
     }
   },
   "InfrastructureElement.geometry": {
     "type": "StructuredValue",
     "value": {
       "type": "Geometry",
-      "Geometry.asWkt": {
-        "type": "Property",
-        "value": "POINT(3.313743000000 50.855703000000)"
-      }
+      "Geometry.asWkt": "POINT(3.313743000000 50.855703000000)"
     }
   },
   "location": {
@@ -26,8 +20,8 @@
     "value": {
       "type": "Point",
       "coordinates": [
-        3.313743000000,
-        50.855703000000
+        3.313743,
+        50.855703
       ]
     }
   }
