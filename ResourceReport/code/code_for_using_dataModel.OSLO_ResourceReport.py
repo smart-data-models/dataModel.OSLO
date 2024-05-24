@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "ResourceReport"
 subject = "dataModel.OSLO"
-ResourceReport.actuator = {'type': 'Property', 'value': {'type': 'ActuatorType', 'ActuatorType.preferredLabel': 'human'}}
+ResourceReport.actuator = {'type': 'ActuatorType', 'ActuatorType.preferredLabel': 'human'}
 attribute = "ResourceReport.actuator"
 value = ResourceReport.actuator
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ResourceReport.location = {'type': 'Property', 'value': 'https://blue-bike.be/stations/141'}
+ResourceReport.location = {'object': 'https://blue-bike.be/stations/141'}
 attribute = "ResourceReport.location"
 value = ResourceReport.location
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ResourceReport.meansOfTransport = {'type': 'Property', 'value': {'type': 'MeansOfTransport', 'MeansOfTransport.preferredLabel': 'bicycle'}}
+ResourceReport.meansOfTransport = {'type': 'MeansOfTransport', 'MeansOfTransport.preferredLabel': 'bicycle'}
 attribute = "ResourceReport.meansOfTransport"
 value = ResourceReport.meansOfTransport
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ResourceReport.number = {'type': 'Property', 'value': 5}
+ResourceReport.number = 5
 attribute = "ResourceReport.number"
 value = ResourceReport.number
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
